@@ -1,4 +1,278 @@
-<!DOCTYPE html>
+{ name: "Diib", category: "Marketing & SEO", url: "https://diib.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "SEO Monitoring", pros: ["Einfach", "Dashboard", "Günstig"], cons: ["US", "Basic", "Limited"] },
+                { name: "Smartwriter", category: "Marketing & SEO", url: "https://www.smartwriter.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "49€/Monat" }, useCase: "Cold Email AI", pros: ["Personalisierung", "LinkedIn", "Automation"], cons: ["US", "Teuer", "Spam-Gefahr"] },
+                { name: "Regie.ai", category: "Marketing & SEO", url: "https://www.regie.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "99€/Monat" }, useCase: "Sales Content AI", pros: ["Sales-fokussiert", "CRM", "Team"], cons: ["US", "Sehr teuer", "Enterprise"] },
+                { name: "Unspam.email", category: "Marketing & SEO", url: "https://unspam.email", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "5€/Monat" }, useCase: "Email Spam Check", pros: ["Günstig", "Einfach", "API"], cons: ["Niche", "Basic", "US"] },
+                { name: "Quicklines", category: "Marketing & SEO", url: "https://www.quicklines.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "59€/Monat" }, useCase: "Cold Email First Lines", pros: ["Personalized", "Scale", "Fast"], cons: ["US", "Teuer", "Niche"] },
+                { name: "SEO.ai", category: "Marketing & SEO", url: "https://seo.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "49€/Monat" }, useCase: "AI SEO Content", pros: ["SEO-optimiert", "Bulk", "Templates"], cons: ["US", "Qualität OK", "Teuer"] },
+                { name: "Scalenut", category: "Marketing & SEO", url: "https://www.scalenut.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "39€/Monat" }, useCase: "SEO Content Platform", pros: ["All-in-One", "Research", "NLP"], cons: ["US", "Komplex", "Teuer"] },
+                { name: "ProRankTracker", category: "Marketing & SEO", url: "https://proranktracker.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "19€/Monat" }, useCase: "Rank Tracking", pros: ["Präzise", "Daily", "Reports"], cons: ["US", "Niche", "Old UI"] },
+                { name: "KeywordTool", category: "Marketing & SEO", url: "https://keywordtool.io", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "89€/Monat" }, useCase: "Keyword Research", pros: ["Google Suggest", "Many Platforms", "Data"], cons: ["US", "Teuer Pro", "Limited Free"] },
+                { name: "Marketingplan.io", category: "Marketing & SEO", url: "https://marketingplan.io", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "29€/Monat" }, useCase: "Marketing Strategy AI", pros: ["Strategy", "Templates", "AI"], cons: ["Niche", "US", "New"] },
+                { name: "Notion AI", category: "Productivity", url: "https://www.notion.so/product/ai", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "10€/Monat" }, useCase: "AI Workspace", pros: ["Integration", "Kontextbewusst", "Datenkontrolle"], cons: ["Kostet extra", "Begrenzt", "Keine Custom"] },
+                { name: "Taskade", category: "Productivity", url: "https://www.taskade.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "8€/Monat" }, useCase: "AI Projektmanagement", pros: ["AI-Agents", "Video-Calls", "Günstig"], cons: ["Weniger ausgereift", "Kleine Community", "AI unpräzise"] },
+                { name: "Reclaim", category: "Productivity", url: "https://reclaim.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "8€/Monat" }, useCase: "Smart Calendar", pros: ["Auto-Scheduling", "Habits", "Google Sync"], cons: ["US", "Nur Google", "Lernphase"] },
+                { name: "Beautiful.ai", category: "Productivity", url: "https://www.beautiful.ai", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "AI Presentations", pros: ["Auto-Design", "Templates", "Team"], cons: ["US", "Limitiert", "Weniger Kontrolle"] },
+                { name: "Xembly", category: "Productivity", url: "https://www.xembly.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "25€/Monat" }, useCase: "AI Executive Assistant", pros: ["Auto-Scheduling", "Meeting Prep", "Follow-up"], cons: ["US", "Teuer", "Neu"] },
+                { name: "Hints", category: "Productivity", url: "https://hints.so", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "15€/Monat" }, useCase: "Voice-to-CRM", pros: ["Voice Commands", "WhatsApp", "CRM"], cons: ["Niche", "Limited CRMs", "Mobile"] },
+                { name: "Qatalog", category: "Productivity", url: "https://qatalog.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "12€/Monat" }, useCase: "AI Work Hub", pros: ["EU-basiert", "All-in-One", "Search"], cons: ["Teuer", "Komplex", "Neu"] },
+                { name: "Ferret", category: "Productivity", url: "https://www.ferret.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "50€/Monat" }, useCase: "Relationship Intelligence", pros: ["Network", "Due Diligence", "Monitoring"], cons: ["US", "Teuer", "Niche"] },
+                { name: "Ellie AI", category: "Productivity", url: "https://ellieai.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "16€/Monat" }, useCase: "AI Email Assistant", pros: ["Email Drafts", "Context", "Multi-Language"], cons: ["Gmail-fokus", "Privacy", "Qualität variiert"] },
+                { name: "Tome.app", category: "Productivity", url: "https://tome.app", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "16€/Monat" }, useCase: "AI Storytelling", pros: ["Generative Slides", "DALL-E", "Modern"], cons: ["US", "Limited Free", "Export limitiert"] },
+                { name: "Sheet AI", category: "Productivity", url: "https://www.sheetai.app", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "8€/Monat" }, useCase: "AI for Sheets", pros: ["Google Sheets", "Formulas", "Analysis"], cons: ["Nur Sheets", "API Calls", "Limitiert"] },
+                { name: "Futurepedia", category: "Productivity", url: "https://www.futurepedia.io", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "AI Tools Directory", pros: ["Kostenlos", "Große Übersicht", "Updates"], cons: ["Nur Directory", "Keine Bewertungen", "Überwältigend"] },
+                { name: "ClickUp", category: "Productivity", url: "https://clickup.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "7€/Monat" }, useCase: "Projektmanagement", pros: ["All-in-One", "Customizable", "AI"], cons: ["US", "Komplex", "Lernkurve"] },
+                { name: "Asana", category: "Productivity", url: "https://asana.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "11€/Monat" }, useCase: "Aufgabenverwaltung", pros: ["Clean UI", "Workflows", "Integrationen"], cons: ["Teuer für Teams", "Weniger Free", "US"] },
+                { name: "Monday.com", category: "Productivity", url: "https://monday.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "9€/Monat" }, useCase: "Work OS", pros: ["Visuelle Boards", "Automations", "Templates"], cons: ["Teuer", "Overwhelming", "Keine Free"] },
+                { name: "Trello", category: "Productivity", url: "https://trello.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "5€/Monat" }, useCase: "Kanban Boards", pros: ["Einfach", "Visuell", "Power-Ups"], cons: ["Limitiert", "Atlassian", "Basic Free"] },
+                { name: "Noty.ai", category: "Productivity", url: "https://noty.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "15€/Monat" }, useCase: "AI Meeting Notes", pros: ["Meeting Notes", "Action Items", "Integration"], cons: ["Unbekannt", "US", "Limitiert"] },
+                { name: "Google Gemini", category: "Chatbots", url: "https://gemini.google.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "20€/Monat" }, useCase: "AI Chatbot", pros: ["Google-Integration", "Multimodal", "Web-Zugriff"], cons: ["Weniger kreativ", "Datensammlung", "Halluzinationen"] },
+                { name: "Poe by Quora", category: "Chatbots", url: "https://poe.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "20€/Monat" }, useCase: "Multi-Model Chatbot", pros: ["Mehrere Modelle", "Custom Bots", "Free"], cons: ["US", "UI gewöhnungsbedürftig", "Mobile"] },
+                { name: "HuggingChat", category: "Chatbots", url: "https://huggingface.co/chat", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "Open-Source Chatbot", pros: ["Open Source", "Kostenlos", "Privacy"], cons: ["Weniger leistungsfähig", "Basic", "Basic UI"] },
+                { name: "Chatsonic", category: "Chatbots", url: "https://writesonic.com/chat", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "16€/Monat" }, useCase: "ChatGPT Alternative", pros: ["Google Search", "Image Gen", "Voice"], cons: ["US", "Limited Free", "Qualität variiert"] },
+                { name: "YouChat", category: "Chatbots", url: "https://you.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "AI Search Chat", pros: ["Web-Search", "Privacy", "Multi-Model"], cons: ["US", "Weniger bekannt", "UI basic"] },
+                { name: "ChatSpot", category: "Chatbots", url: "https://chatspot.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "Kostenlos mit HubSpot" }, useCase: "HubSpot AI Chat", pros: ["HubSpot", "CRM Commands", "Free"], cons: ["Nur HubSpot", "Limitiert", "US"] },
+                { name: "Poly.ai", category: "Chatbots", url: "https://poly.ai", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "Auf Anfrage" }, useCase: "Voice Chatbots", pros: ["Voice-fokussiert", "Natural", "Multi-Language"], cons: ["Enterprise", "Komplex", "Teuer"] },
+                { name: "QuickChat", category: "Chatbots", url: "https://www.quickchat.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "99€/Monat" }, useCase: "Custom AI Chatbot", pros: ["Custom Training", "Multi-Language", "Integrationen"], cons: ["US", "Teuer", "Setup"] },
+                { name: "Cresta AI", category: "Chatbots", url: "https://cresta.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "Auf Anfrage" }, useCase: "Contact Center AI", pros: ["Real-time Coaching", "Sales", "Analytics"], cons: ["US", "Enterprise", "Sehr teuer"] },
+                { name: "Echowin", category: "Chatbots", url: "https://echo.win", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "30€/Monat" }, useCase: "AI Phone Agent", pros: ["24/7 Phone", "Natural Voice", "Call Handling"], cons: ["Niche", "Voice Quality", "Teuer"] },
+                { name: "Alan AI", category: "Chatbots", url: "https://alan.app", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "99€/Monat" }, useCase: "Voice AI Platform", pros: ["Voice Commands", "Developer", "SDK"], cons: ["US", "Komplex", "Teuer"] },
+                { name: "Kommunicate", category: "Chatbots", url: "https://www.kommunicate.io", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "30€/Monat" }, useCase: "Customer Support Chat", pros: ["Live Chat + AI", "Multi-Channel", "Automation"], cons: ["US", "UI dated", "Support"] },
+                { name: "ConvertKit", category: "Chatbots", url: "https://convertkit.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "Email Marketing", pros: ["Creator-fokussiert", "Automations", "Landing Pages"], cons: ["US", "Basic Design", "Teuer bei Scale"] },
+                { name: "Otter.ai", category: "Support & Meeting", url: "https://otter.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "Meeting Transkription", pros: ["Echtzeit", "Auto-Join", "AI-Summary"], cons: ["US-Server", "Nur Englisch gut", "300 Min Free"] },
+                { name: "Fireflies.ai", category: "Support & Meeting", url: "https://fireflies.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "AI Meeting Assistant", pros: ["CRM-Integration", "Intelligence", "Sharing"], cons: ["Datenschutz", "Bot informieren", "Kann stören"] },
+                { name: "Krisp AI", category: "Support & Meeting", url: "https://krisp.ai", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "8€/Monat" }, useCase: "Noise Cancellation", pros: ["Beste Noise Cancel", "Meeting Notes", "Lokal"], cons: ["Nicht 100%", "Robotisch", "Premium"] },
+                { name: "CoGram", category: "Support & Meeting", url: "https://www.cogram.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "25€/Monat" }, useCase: "AI Meeting Notes", pros: ["DSGVO-konform", "Team", "Action Items"], cons: ["Teurer", "Kleiner", "Weniger bekannt"] },
+                { name: "Mayday", category: "Support & Meeting", url: "https://www.mayday.am", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "14€/Monat" }, useCase: "AI Calendar", pros: ["Smart Scheduling", "Time Preferences", "Auto-Defend"], cons: ["US", "Nur Mac/iOS", "Teuer"] },
+                { name: "Fiber", category: "Support & Meeting", url: "https://fiber.so", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "Team Updates", pros: ["Async Updates", "Simple", "Integrations"], cons: ["Niche", "Small", "Limited"] },
+                { name: "Rewind", category: "Support & Meeting", url: "https://www.rewind.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "19€/Monat" }, useCase: "Personal Search Engine", pros: ["Alles durchsuchbar", "Lokal", "Privacy"], cons: ["Nur Mac", "Storage-intensiv", "Teuer"] },
+                { name: "Vowel", category: "Support & Meeting", url: "https://www.vowel.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "16€/Monat" }, useCase: "Video Meeting + AI", pros: ["Meeting + Notes", "Recording", "Agenda"], cons: ["US", "Kleiner Player", "Zoom Alt"] },
+                { name: "Audioread", category: "Support & Meeting", url: "https://audioread.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "10€/Monat" }, useCase: "Text-to-Podcast", pros: ["Artikel als Audio", "Natural Voices", "Offline"], cons: ["Niche", "Voice OK", "Limitiert"] },
+                { name: "GitMind AI", category: "Support & Meeting", url: "https://gitmind.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "Mind Mapping", pros: ["AI Mind Maps", "Collaboration", "Templates"], cons: ["Chinesisch", "Privacy?", "Basic"] },
+                { name: "Nanonet", category: "Support & Meeting", url: "https://nanonets.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "499€/Monat" }, useCase: "AI Document Processing", pros: ["OCR + AI", "Automation", "API"], cons: ["US", "Sehr teuer", "Enterprise"] },
+                { name: "Genei", category: "Support & Meeting", url: "https://www.genei.io", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "4€/Monat" }, useCase: "Research Summarization", pros: ["Academic Papers", "Summarization", "UK"], cons: ["Niche", "Limited Free", "Research"] },
+                { name: "Adobe Enhance", category: "Support & Meeting", url: "https://podcast.adobe.com/enhance", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "Audio Enhancement", pros: ["Kostenlos", "Studio Quality", "Einfach"], cons: ["Nur Audio", "Adobe Account", "Basic"] },
+                { name: "Vercel", category: "Cloud & Infrastructure", url: "https://vercel.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "20€/Monat" }, useCase: "Frontend Deployment", pros: ["Git Push Live", "Next.js", "Global CDN"], cons: ["Teuer Traffic", "Lock-in", "Backend limitiert"] },
+                { name: "AWS", category: "Cloud & Infrastructure", url: "https://aws.amazon.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "Variabel" }, useCase: "Cloud Infrastructure", pros: ["Marktführer", "Alle Services", "EU-Regionen"], cons: ["Komplex", "Kostenintransparent", "US"] },
+                { name: "Google Cloud", category: "Cloud & Infrastructure", url: "https://cloud.google.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "Variabel" }, useCase: "Cloud Platform", pros: ["AI/ML", "Kubernetes", "EU"], cons: ["Google Datenschutz", "Weniger Services", "Pricing"] },
+                { name: "Azure", category: "Cloud & Infrastructure", url: "https://azure.microsoft.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "Variabel" }, useCase: "Microsoft Cloud", pros: ["Enterprise", "Hybrid", "EU-RZ"], cons: ["MS Ecosystem", "Teuer", "UI komplex"] },
+                { name: "DigitalOcean", category: "Cloud & Infrastructure", url: "https://www.digitalocean.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "4€/Monat" }, useCase: "Developer Cloud", pros: ["Einfach", "Transparent", "Gute Docs"], cons: ["Weniger Features", "Kleiner", "US"] },
+                { name: "Netlify", category: "Cloud & Infrastructure", url: "https://www.netlify.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "19€/Monat" }, useCase: "Jamstack Deployment", pros: ["Git-basiert", "Edge Functions", "Free SSL"], cons: ["Bandwidth Limits", "Teuer bei Scale", "Frontend"] },
+                { name: "Heroku", category: "Cloud & Infrastructure", url: "https://www.heroku.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "7€/Monat" }, useCase: "PaaS", pros: ["Einfach", "Add-ons", "Buildpacks"], cons: ["Teuer", "Keine Free", "Salesforce"] },
+                { name: "Perplexity", category: "Research & Analysis", url: "https://www.perplexity.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "20€/Monat" }, useCase: "AI Search Engine", pros: ["Web-Search AI", "Quellen", "GPT-4 Claude"], cons: ["Veraltete Quellen", "Keine vollen Artikel", "GPT-3.5 Free"] },
+                { name: "Consensus", category: "Research & Analysis", url: "https://consensus.app", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "Scientific Research", pros: ["Peer-reviewed", "Evidence", "Academic"], cons: ["US", "Niche", "Limited Free"] },
+                { name: "Elicit", category: "Research & Analysis", url: "https://elicit.org", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "Research Assistant", pros: ["Paper Analysis", "Q&A", "Citations"], cons: ["Academic", "Beta", "Limitiert"] },
+                { name: "ElevenLabs", category: "Voice & Audio", url: "https://elevenlabs.io", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "5€/Monat" }, useCase: "AI Text-to-Speech", pros: ["Best Quality", "Voice Clone 1 Min", "29 Sprachen"], cons: ["Missbrauch möglich", "10K Free", "Commercial extra"] },
+                { name: "Murf AI", category: "Voice & Audio", url: "https://murf.ai", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "19€/Monat" }, useCase: "AI Voiceover", pros: ["120+ Stimmen", "Video-Sync", "Studio"], cons: ["US", "Teuer", "Free limitiert"] },
+                { name: "Speechify", category: "Voice & Audio", url: "https://speechify.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "Text-to-Speech", pros: ["30+ Sprachen", "OCR", "Celebrity"], cons: ["US", "Subscription teuer", "Limitiert"] },
+                { name: "Play.ht", category: "Voice & Audio", url: "https://play.ht", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "19€/Monat" }, useCase: "AI Voice Generator", pros: ["Voice Cloning", "API", "Multi-Language"], cons: ["US", "Qualität variiert", "Teuer"] },
+                { name: "Resemble AI", category: "Voice & Audio", url: "https://www.resemble.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "20€/Monat" }, useCase: "Voice Cloning", pros: ["Real-time Voice", "API", "Custom"], cons: ["US", "Enterprise", "Ethik"] },
+                { name: "Airtable", category: "Database & Data", url: "https://www.airtable.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "10€/Monat" }, useCase: "No-Code Database", pros: ["Intuitiv", "Automation", "Views"], cons: ["Teuer Scale", "Performance", "Formula"] },
+                { name: "Supabase", category: "Database & Data", url: "https://supabase.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "25€/Monat" }, useCase: "Open-Source Firebase", pros: ["PostgreSQL", "Real-time", "Self-Host"], cons: ["Tech Setup", "Ecosystem", "UI basic"] },
+                { name: "MongoDB", category: "Database & Data", url: "https://www.mongodb.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "NoSQL Database", pros: ["Skalierbar", "Flexibel", "Cloud + Self"], cons: ["Lernkurve", "Atlas teuer", "Kein ACID"] },
+                { name: "PostgreSQL", category: "Database & Data", url: "https://www.postgresql.org", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "SQL Database", pros: ["Open Source", "ACID", "Feature-reich"], cons: ["Self-Hosting", "Komplex", "Performance-Tuning"] },
+                { name: "MySQL", category: "Database & Data", url: "https://www.mysql.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "SQL Database", pros: ["Weit verbreitet", "Fast", "Open Source"], cons: ["Oracle", "Weniger Features", "Replication"] },
+                { name: "Redis", category: "Database & Data", url: "https://redis.io", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "In-Memory Cache", pros: ["Extrem schnell", "Data Structures", "Open Source"], cons: ["Memory", "Persistence", "Single-threaded"] },
+                { name: "Snowflake", category: "Database & Data", url: "https://www.snowflake.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "Variabel" }, useCase: "Data Warehouse", pros: ["Cloud-native", "Separation", "Multi-Cloud"], cons: ["US-Firma", "Sehr teuer", "Lock-in"] },
+                { name: "Obsidian", category: "Note-Taking", url: "https://obsidian.md", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "4€/Monat" }, useCase: "Markdown Knowledge Base", pros: ["Lokale Dateien", "Graph View", "Plugins"], cons: ["Markdown nötig", "Sync extra", "Mobile"] },
+                { name: "Roam Research", category: "Note-Taking", url: "https://roamresearch.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "15€/Monat" }, useCase: "Networked Thought", pros: ["Bidirectional", "Daily Notes", "Graph"], cons: ["US", "Teuer", "Lernkurve"] },
+                { name: "Logseq", category: "Note-Taking", url: "https://logseq.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "5€/Monat Sync" }, useCase: "Knowledge Graph", pros: ["Open Source", "Privacy", "Outliner"], cons: ["Sync kostet", "Beta", "Mobile OK"] },
+                { name: "Mem", category: "Note-Taking", url: "https://mem.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "8€/Monat" }, useCase: "AI Note-Taking", pros: ["AI-powered", "Smart Search", "Auto-Linking"], cons: ["US", "Teuer", "Neu"] },
+                { name: "Reflect", category: "Note-Taking", url: "https://reflect.app", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "10€/Monat" }, useCase: "Networked Notes", pros: ["Fast", "Clean UI", "E2E Encrypted"], cons: ["US", "Teuer", "Limited"] },
+                { name: "Capacities", category: "Note-Taking", url: "https://capacities.io", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "8€/Monat" }, useCase: "Object-based Notes", pros: ["EU-basiert", "Structured", "Modular"], cons: ["Neu", "Learning Curve", "Small"] }
+            ];
+
+            const categories = ['all', ...new Set(allTools.map(tool => tool.category))];
+
+            const filteredTools = allTools.filter(tool => {
+                const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                     tool.useCase.toLowerCase().includes(searchTerm.toLowerCase());
+                const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            const toggleExpand = (toolName) => {
+                setExpandedTool(expandedTool === toolName ? null : toolName);
+            };
+
+            const downloadAsJSON = () => {
+                const dataStr = JSON.stringify(allTools, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'ai-tools-complete-2025.json';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            };
+
+            return (
+                <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div>
+                                <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">AI Tools Komplettanalyse 2025</h1>
+                                <p className="text-slate-600">150+ Tools mit EU-Compliance, Preisen und Bewertung</p>
+                            </div>
+                            <button
+                                onClick={downloadAsJSON}
+                                className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 shadow-md"
+                            >
+                                <Download />
+                                Als JSON herunterladen
+                            </button>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6">
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="relative">
+                                    <div className="absolute left-3 top-3 text-slate-400"><Search /></div>
+                                    <input
+                                        type="text"
+                                        placeholder="Tool oder Anwendungsfall suchen..."
+                                        className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                    />
+                                </div>
+                                <select
+                                    className="px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    value={selectedCategory}
+                                    onChange={(e) => setSelectedCategory(e.target.value)}
+                                >
+                                    {categories.map(cat => (
+                                        <option key={cat} value={cat}>
+                                            {cat === 'all' ? 'Alle Kategorien' : cat}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="space-y-3">
+                            {filteredTools.map((tool) => (
+                                <div key={tool.name} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                                    <div 
+                                        className="p-4 md:p-6 cursor-pointer"
+                                        onClick={() => toggleExpand(tool.name)}
+                                    >
+                                        <div className="flex items-start justify-between">
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex flex-wrap items-center gap-2 mb-2">
+                                                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{tool.name}</h3>
+                                                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                                                        {tool.category}
+                                                    </span>
+                                                </div>
+                                                <p className="text-slate-600 mb-3 text-sm md:text-base">{tool.useCase}</p>
+                                                
+                                                <div className="flex flex-wrap gap-2">
+                                                    <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs ${
+                                                        tool.euCompliant ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+                                                    }`}>
+                                                        <MapPin />
+                                                        {tool.euCompliant ? 'EU' : 'Nicht EU'}
+                                                    </div>
+                                                    
+                                                    {tool.pricing.free && (
+                                                        <div className="flex items-center gap-1 px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs">
+                                                            <CheckCircle />
+                                                            Free
+                                                        </div>
+                                                    )}
+                                                    
+                                                    {tool.pricing.trial && (
+                                                        <div className="flex items-center gap-1 px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                                                            <Clock />
+                                                            Trial
+                                                        </div>
+                                                    )}
+                                                    
+                                                    <div className="flex items-center gap-1 px-2 py-1 bg-slate-100 text-slate-700 rounded-full text-xs">
+                                                        <DollarSign />
+                                                        {tool.pricing.paidFrom}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="ml-4 flex-shrink-0">
+                                                {expandedTool === tool.name ? <ChevronUp /> : <ChevronDown />}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {expandedTool === tool.name && (
+                                        <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-slate-200">
+                                            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
+                                                <div>
+                                                    <h4 className="font-semibold text-green-700 mb-3 flex items-center gap-2">
+                                                        <CheckCircle />
+                                                        Vorteile
+                                                    </h4>
+                                                    <ul className="space-y-2">
+                                                        {tool.pros.map((pro, idx) => (
+                                                            <li key={idx} className="flex gap-2 text-slate-700 text-sm">
+                                                                <span className="text-green-500 mt-1 flex-shrink-0">✓</span>
+                                                                <span>{pro}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                <div>
+                                                    <h4 className="font-semibold text-red-700 mb-3 flex items-center gap-2">
+                                                        <XCircle />
+                                                        Nachteile
+                                                    </h4>
+                                                    <ul className="space-y-2">
+                                                        {tool.cons.map((con, idx) => (
+                                                            <li key={idx} className="flex gap-2 text-slate-700 text-sm">
+                                                                <span className="text-red-500 mt-1 flex-shrink-0">✗</span>
+                                                                <span>{con}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div className="mt-4 md:mt-6 pt-4 border-t border-slate-200">
+                                                <a 
+                                                    href={tool.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                                                >
+                                                    Tool besuchen →
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        {filteredTools.length === 0 && (
+                            <div className="text-center py-12 text-slate-500">
+                                Keine Tools gefunden. Versuchen Sie einen anderen Suchbegriff.
+                            </div>
+                        )}
+                        
+                        {filteredTools.length > 0 && (
+                            <div className="mt-6 text-center text-slate-600">
+                                {filteredTools.length} Tool{filteredTools.length !== 1 ? 's' : ''} gefunden
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<AIToolsComplete />);
+    </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -13,10 +287,16 @@
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
+        
         const Search = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>;
         const Download = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>;
         const ChevronDown = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>;
         const ChevronUp = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+        const XCircle = () => <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+        const MapPin = () => <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>;
+        const DollarSign = () => <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+        const Clock = () => <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
 
         const AIToolsComplete = () => {
             const [searchTerm, setSearchTerm] = useState('');
@@ -24,89 +304,67 @@
             const [expandedTool, setExpandedTool] = useState(null);
 
             const allTools = [
-                { name: "Make", category: "Automation & Workflow", url: "https://www.make.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "9€/Monat" }, useCase: "Visuelle Workflow-Automation", pros: ["Intuitive Canvas-Oberfläche", "1500+ Apps", "Gutes Preis-Leistung"], cons: ["Lernkurve", "Weniger Apps als Zapier", "Komplexe Preise"] },
+                { name: "Make", category: "Automation & Workflow", url: "https://www.make.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "9€/Monat" }, useCase: "Visuelle Workflow-Automation für komplexe Prozesse", pros: ["Intuitive Canvas-Oberfläche", "1500+ Apps", "Gutes Preis-Leistung"], cons: ["Lernkurve", "Weniger Apps als Zapier", "Komplexe Preise"] },
                 { name: "Zapier", category: "Automation & Workflow", url: "https://zapier.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "20€/Monat" }, useCase: "No-Code Automation", pros: ["8000+ Integrationen", "Sehr einfach", "AI-Copilot"], cons: ["Teuer bei Volumen", "US-Server", "Linear"] },
                 { name: "n8n", category: "Automation & Workflow", url: "https://n8n.io", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "20€/Monat" }, useCase: "Open-Source Automation", pros: ["DSGVO-konform", "Self-Hosting", "LangChain"], cons: ["Technisch", "1000 Apps", "Setup-Aufwand"] },
+                { name: "IFTTT", category: "Automation & Workflow", url: "https://ifttt.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "3€/Monat" }, useCase: "Smart Home Automation", pros: ["Günstig", "Einfach", "IoT"], cons: ["US-Server", "Basic", "Weniger Business"] },
+                { name: "Activepieces", category: "Automation & Workflow", url: "https://www.activepieces.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "20€/Monat" }, useCase: "Open-Source Zapier Alternative", pros: ["Open Source", "Self-Hosting", "Günstig"], cons: ["Neu am Markt", "Weniger Integrationen", "Kleinere Community"] },
+                { name: "Pipedream", category: "Automation & Workflow", url: "https://pipedream.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "19€/Monat" }, useCase: "Developer Workflow Automation", pros: ["Code-first", "API-fokussiert", "Flexibel"], cons: ["US-Server", "Technisch", "Weniger No-Code"] },
+                { name: "GitHub", category: "Developer Tools", url: "https://github.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "4€/Monat" }, useCase: "Code-Hosting und Versionskontrolle", pros: ["Größte Dev-Community", "GitHub Actions", "Copilot"], cons: ["Microsoft", "US-Server", "Komplex"] },
+                { name: "GitLab", category: "Developer Tools", url: "https://gitlab.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "19€/Monat" }, useCase: "DevOps Platform", pros: ["Self-Hosting", "All-in-One", "EU-freundlich"], cons: ["Komplex", "Kleinere Community", "Resource-intensiv"] },
+                { name: "Docker", category: "Developer Tools", url: "https://www.docker.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "5€/Monat" }, useCase: "Container-Virtualisierung", pros: ["Plattformunabhängig", "Riesiges Hub", "Standard"], cons: ["Lernkurve", "Mac/Win Performance", "Licensing"] },
+                { name: "Kubernetes", category: "Developer Tools", url: "https://kubernetes.io", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Cloud-abhängig" }, useCase: "Container-Orchestrierung", pros: ["Open Source", "Production-ready", "Cloud-agnostic"], cons: ["Sehr komplex", "Overhead", "Steil"] },
+                { name: "Git", category: "Developer Tools", url: "https://git-scm.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "Version Control", pros: ["Open Source", "Lokal", "Standard"], cons: ["CLI-fokussiert", "Lernkurve", "Merge-Konflikte"] },
+                { name: "Jenkins", category: "Developer Tools", url: "https://www.jenkins.io", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "CI/CD Server", pros: ["Open Source", "Plugins", "Flexibel"], cons: ["Setup komplex", "UI dated", "Maintenance"] },
+                { name: "CircleCI", category: "Developer Tools", url: "https://circleci.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "15€/Monat" }, useCase: "CI/CD Cloud", pros: ["Docker native", "Fast", "Free Credits"], cons: ["US", "Teuer bei Scale", "Komplex"] },
+                { name: "Travis CI", category: "Developer Tools", url: "https://www.travis-ci.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "69€/Monat" }, useCase: "CI/CD", pros: ["GitHub Integration", "YAML Config", "Matrix Builds"], cons: ["US", "Teuer", "Langsamer"] },
                 { name: "ChatGPT", category: "Writing & Content", url: "https://chat.openai.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "20€/Monat" }, useCase: "Universeller AI-Assistent", pros: ["Vielseitig", "GPT-4", "Plugins"], cons: ["Nicht DSGVO", "Halluzinationen", "Überlastet"] },
                 { name: "Claude AI", category: "Writing & Content", url: "https://claude.ai", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "18€/Monat" }, useCase: "AI mit Textverständnis", pros: ["EU-Server", "200K Context", "Weniger Halluzinationen"], cons: ["Weniger Features", "Weniger bekannt", "Vorsichtig"] },
-                { name: "Canva", category: "Design & Image", url: "https://www.canva.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "Design Tool", pros: ["Templates", "Magic Studio", "Team"], cons: ["Template-Look", "Performance", "Pro-Features"] }
-            ];
-
-            const categories = ['all', ...new Set(allTools.map(tool => tool.category))];
-            const filteredTools = allTools.filter(tool => {
-                const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) || tool.useCase.toLowerCase().includes(searchTerm.toLowerCase());
-                const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
-                return matchesSearch && matchesCategory;
-            });
-
-            return (
-                <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="mb-6">
-                            <h1 className="text-4xl font-bold text-slate-800 mb-2">AI Tools Analyse 2025</h1>
-                            <p className="text-slate-600">Interaktive Tool-Übersicht</p>
-                        </div>
-                        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-                            <div className="grid md:grid-cols-2 gap-4">
-                                <input
-                                    type="text"
-                                    placeholder="Suchen..."
-                                    className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                />
-                                <select className="px-4 py-2 border border-slate-300 rounded-lg" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-                                    {categories.map(cat => <option key={cat} value={cat}>{cat === 'all' ? 'Alle Kategorien' : cat}</option>)}
-                                </select>
-                            </div>
-                        </div>
-                        <div className="space-y-3">
-                            {filteredTools.map((tool) => (
-                                <div key={tool.name} className="bg-white rounded-lg shadow-md p-6">
-                                    <div className="cursor-pointer" onClick={() => setExpandedTool(expandedTool === tool.name ? null : tool.name)}>
-                                        <h3 className="text-2xl font-bold text-slate-800 mb-2">{tool.name}</h3>
-                                        <p className="text-slate-600 mb-3">{tool.useCase}</p>
-                                        <div className="flex gap-2 flex-wrap">
-                                            <span className={`px-3 py-1 rounded-full text-sm ${tool.euCompliant ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}`}>
-                                                {tool.euCompliant ? '🇪🇺 EU' : '⚠️ Nicht EU'}
-                                            </span>
-                                            {tool.pricing.free && <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm">✓ Kostenlos</span>}
-                                            <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">💰 {tool.pricing.paidFrom}</span>
-                                        </div>
-                                    </div>
-                                    {expandedTool === tool.name && (
-                                        <div className="mt-6 pt-6 border-t">
-                                            <div className="grid md:grid-cols-2 gap-6">
-                                                <div>
-                                                    <h4 className="font-semibold text-green-700 mb-3">✓ Vorteile</h4>
-                                                    <ul className="space-y-2">
-                                                        {tool.pros.map((pro, idx) => <li key={idx} className="text-slate-700">• {pro}</li>)}
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold text-red-700 mb-3">✗ Nachteile</h4>
-                                                    <ul className="space-y-2">
-                                                        {tool.cons.map((con, idx) => <li key={idx} className="text-slate-700">• {con}</li>)}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div className="mt-6">
-                                                <a href={tool.url} target="_blank" rel="noopener noreferrer" className="inline-flex px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                                    Tool besuchen →
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<AIToolsComplete />);
-    </script>
-</body>
-</html>
+                { name: "Jasper", category: "Writing & Content", url: "https://www.jasper.ai", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "39€/Monat" }, useCase: "Marketing-Content", pros: ["Marketing-Templates", "Brand Voice", "SEO-Mode"], cons: ["Teuer", "Generisch", "GPT-4 basiert"] },
+                { name: "Grammarly", category: "Writing & Content", url: "https://www.grammarly.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "Grammatikkorrektur", pros: ["Bester Grammar-Check", "Browser-Extension", "Tone-Detection"], cons: ["Premium teuer", "Aggressiv", "Englisch-fokus"] },
+                { name: "DeepL", category: "Writing & Content", url: "https://www.deepl.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "8€/Monat" }, useCase: "AI-Übersetzung", pros: ["Made in Germany", "Beste Qualität", "DSGVO"], cons: ["32 Sprachen", "API teuer", "Keine Website"] },
+                { name: "Copy.ai", category: "Writing & Content", url: "https://www.copy.ai", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "36€/Monat" }, useCase: "AI Copywriting", pros: ["Templates", "Team-Collab", "Workflow"], cons: ["US", "Teuer", "Editing nötig"] },
+                { name: "Rytr", category: "Writing & Content", url: "https://rytr.me", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "Budget AI Writing", pros: ["Günstig", "40+ Templates", "30+ Sprachen"], cons: ["Begrenzt", "Weniger akkurat", "US"] },
+                { name: "QuillBot", category: "Writing & Content", url: "https://quillbot.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "Paraphrasing", pros: ["Gutes Paraphrasing", "Citation", "Günstig"], cons: ["US", "Limitiert Free", "Unnatürlich"] },
+                { name: "Wordtune", category: "Writing & Content", url: "https://www.wordtune.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "10€/Monat" }, useCase: "AI Rewriter", pros: ["Natürlich", "Browser-Extension", "Tone"], cons: ["Limitiert", "Nur Englisch", "Premium nötig"] },
+                { name: "Writesonic", category: "Writing & Content", url: "https://writesonic.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "16€/Monat" }, useCase: "AI Content & SEO", pros: ["SEO-optimiert", "Günstig", "Viele Features"], cons: ["US", "Qualität variiert", "Editing nötig"] },
+                { name: "Simplified", category: "Writing & Content", url: "https://simplified.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "All-in-One Content", pros: ["Text+Design+Video", "Team-Collab", "Templates"], cons: ["US", "Jack of all trades", "Performance"] },
+                { name: "ProWritingAid", category: "Writing & Content", url: "https://prowritingaid.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "10€/Monat" }, useCase: "Writing Coach", pros: ["Tiefe Analyse", "Autoren-fokussiert", "Lifetime Deal"], cons: ["US", "Langsam", "Englisch-fokus"] },
+                { name: "Anyword", category: "Writing & Content", url: "https://anyword.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "39€/Monat" }, useCase: "Data-Driven Copy", pros: ["Performance Prediction", "A/B Testing", "Analytics"], cons: ["US", "Teuer", "Komplex"] },
+                { name: "Writecream", category: "Writing & Content", url: "https://www.writecream.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "29€/Monat" }, useCase: "AI Content Generator", pros: ["Multiple Formate", "Voice-over", "Images"], cons: ["US", "Qualität OK", "Limitiert Free"] },
+                { name: "ContentForge", category: "Writing & Content", url: "https://contentforge.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "27€/Monat" }, useCase: "Bulk Content", pros: ["Bulk Generation", "SEO", "Templates"], cons: ["Unbekannt", "US-Server", "Niche"] },
+                { name: "Hypotenuse AI", category: "Writing & Content", url: "https://www.hypotenuse.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "15€/Monat" }, useCase: "Product Descriptions", pros: ["E-Commerce", "Bulk", "SEO"], cons: ["US", "Niche", "Limitiert"] },
+                { name: "Word AI", category: "Writing & Content", url: "https://wordai.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "57€/Monat" }, useCase: "Article Spinning", pros: ["Human-like", "Bulk", "API"], cons: ["US", "Sehr teuer", "Ethik?"] },
+                { name: "TextMetrics", category: "Writing & Content", url: "https://www.textmetrics.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "Auf Anfrage" }, useCase: "Enterprise Writing Platform", pros: ["EU-basiert", "Compliance", "Enterprise"], cons: ["Teuer", "Enterprise-fokus", "Komplex"] },
+                { name: "SmartCopy", category: "Writing & Content", url: "https://www.unbounce.com/product/smart-copy", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "Teil von Unbounce" }, useCase: "Landing Page Copy", pros: ["Landing Page fokus", "A/B Testing", "Templates"], cons: ["US", "Nur Landing Pages", "Teil von Tool"] },
+                { name: "Midjourney", category: "Design & Image", url: "https://www.midjourney.com", euCompliant: false, pricing: { free: false, trial: false, paidFrom: "10€/Monat" }, useCase: "Künstlerische Bilder", pros: ["Beste Qualität", "Community", "Styles"], cons: ["Nur Discord", "Keine Free", "Rechte"] },
+                { name: "DALL-E 3", category: "Design & Image", url: "https://openai.com/dall-e-3", euCompliant: false, pricing: { free: false, trial: false, paidFrom: "20€/Monat" }, useCase: "Text-zu-Bild", pros: ["Prompt-Verständnis", "ChatGPT Plus", "Präzise"], cons: ["Weniger künstlerisch", "50/Tag", "Kein Upscale"] },
+                { name: "Canva", category: "Design & Image", url: "https://www.canva.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "Design Tool", pros: ["Templates", "Magic Studio", "Team"], cons: ["Template-Look", "Performance", "Pro-Features"] },
+                { name: "Figma", category: "Design & Image", url: "https://www.figma.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "12€/Monat" }, useCase: "UI/UX Design", pros: ["Standard", "Real-time", "FigJam"], cons: ["Lernkurve", "Cloud-first", "Adobe"] },
+                { name: "Stable Diffusion", category: "Design & Image", url: "https://stability.ai", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "Open-Source Bilder", pros: ["Open Source", "Lokal", "Kontrolle"], cons: ["Setup", "GPU", "Lernkurve"] },
+                { name: "Remove.bg", category: "Design & Image", url: "https://www.remove.bg", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "9€/Monat" }, useCase: "Background Removal", pros: ["Akkurat", "API", "Schnell"], cons: ["Free limitiert", "Nur BG", "Batch extra"] },
+                { name: "Adobe Express", category: "Design & Image", url: "https://www.adobe.com/express", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "11€/Monat" }, useCase: "Quick Design", pros: ["Adobe Quality", "Templates", "AI"], cons: ["Limitiert vs PS", "Subscription", "Adobe-Lock"] },
+                { name: "Microsoft Designer", category: "Design & Image", url: "https://designer.microsoft.com", euCompliant: true, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "Social Media Design", pros: ["Kostenlos", "DALL-E", "MS-Integration"], cons: ["Basic", "MS Account", "Neu"] },
+                { name: "Leonardo.ai", category: "Design & Image", url: "https://leonardo.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "Game Assets", pros: ["Game-fokussiert", "Assets", "Canvas"], cons: ["Nische", "Qualität variiert", "Lernkurve"] },
+                { name: "Hotpot AI", category: "Design & Image", url: "https://hotpot.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "AI Design Tools", pros: ["Viele Tools", "Günstig", "Einfach"], cons: ["US", "Qualität OK", "Nicht Best"] },
+                { name: "StockIMG", category: "Design & Image", url: "https://stockimg.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "19€/Monat" }, useCase: "AI Stock Images", pros: ["Stock fokussiert", "Templates", "Schnell"], cons: ["Unbekannt", "Qualität OK", "Niche"] },
+                { name: "Designs.ai", category: "Design & Image", url: "https://designs.ai", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "29€/Monat" }, useCase: "AI Design Suite", pros: ["All-in-One", "Logo+Video", "Templates"], cons: ["Unbekannt", "Teuer", "Jack of all"] },
+                { name: "MakeLogo.ai", category: "Design & Image", url: "https://makelogo.ai", euCompliant: false, pricing: { free: false, trial: false, paidFrom: "29€ einmalig" }, useCase: "AI Logo Generator", pros: ["Günstig", "Einmalzahlung", "Schnell"], cons: ["Basic", "Limited", "Niche"] },
+                { name: "Bing Image Creator", category: "Design & Image", url: "https://www.bing.com/create", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "DALL-E kostenlos", pros: ["Kostenlos", "DALL-E 3", "Microsoft"], cons: ["MS Account", "Limitiert", "Langsam"] },
+                { name: "Adobe Sensei", category: "Design & Image", url: "https://www.adobe.com/sensei.html", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "Teil von Adobe CC" }, useCase: "AI in Adobe Products", pros: ["Adobe Integration", "Professional", "Features"], cons: ["Teuer", "Adobe CC nötig", "Komplex"] },
+                { name: "BlueWillow", category: "Design & Image", url: "https://www.bluewillow.ai", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "Kostenlos" }, useCase: "Free Midjourney Alt", pros: ["Kostenlos", "Discord", "OK Quality"], cons: ["Langsam", "Queue", "Basic"] },
+                { name: "Descript", category: "Video", url: "https://www.descript.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "12€/Monat" }, useCase: "Text-Video-Editing", pros: ["Innovativ", "Overdub", "23 Sprachen"], cons: ["Performance", "Overdub unnatürlich", "Free limitiert"] },
+                { name: "HeyGen", category: "Video", url: "https://www.heygen.com", euCompliant: false, pricing: { free: true, trial: true, paidFrom: "24€/Monat" }, useCase: "AI-Avatar Videos", pros: ["Realistische Avatare", "40+ Sprachen", "Keine Kamera"], cons: ["Uncanny Valley", "Ethik", "Wasserzeichen"] },
+                { name: "Pictory", category: "Video", url: "https://pictory.ai", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "23€/Monat" }, useCase: "Text-zu-Video", pros: ["Blog-zu-Video", "Auto-Captions", "Stock"], cons: ["Stock-Look", "Limitiert", "Keine Free"] },
+                { name: "InVideo", category: "Video", url: "https://invideo.io", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "20€/Monat" }, useCase: "Video Creation", pros: ["6000+ Templates", "Text-to-Video", "Multi-Language"], cons: ["Wasserzeichen", "Performance", "Komplexe UI"] },
+                { name: "Filmora", category: "Video", url: "https://filmora.wondershare.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "50€/Jahr" }, useCase: "Video Editor", pros: ["Einsteigerfreundlich", "AI-Features", "Preis-Leistung"], cons: ["Wasserzeichen", "Weniger Pro", "Jährlich"] },
+                { name: "FlexClip", category: "Video", url: "https://www.flexclip.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/Monat" }, useCase: "Online Video Maker", pros: ["Browser-basiert", "Templates", "Günstig"], cons: ["Limitiert", "Wasserzeichen", "Basic"] },
+                { name: "Rawshorts", category: "Video", url: "https://www.rawshorts.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "39€/Monat" }, useCase: "Animated Explainer", pros: ["Text-to-Animation", "Drag-Drop", "Templates"], cons: ["US", "Teuer", "Animation limitiert"] },
+                { name: "Animoto", category: "Video", url: "https://animoto.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "16€/Monat" }, useCase: "Slideshow Video", pros: ["Einfach", "Templates", "Music"], cons: ["US", "Basic", "Wasserzeichen"] },
+                { name: "DeepBrain AI", category: "Video", url: "https://www.deepbrain.io", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "30€/Monat" }, useCase: "AI Video Avatare", pros: ["Realistische Avatare", "Multi-Language", "Schnell"], cons: ["Teuer", "Ethik", "Qualität variiert"] },
+                { name: "Video SummarAize", category: "Video", url: "https://www.videosummarize.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "Variiert" }, useCase: "Video Summarization", pros: ["Schnell", "YouTube", "Free"], cons: ["Basic", "Qualität OK", "Limitiert"] },
+                { name: "SurferSEO", category: "Marketing & SEO", url: "https://surferseo.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "69€/Monat" }, useCase: "On-Page SEO", pros: ["Content Editor", "Search-Intent", "WordPress"], cons: ["Teuer", "US-fokus", "Keyword-Stuffing"] },
+                { name: "Semrush", category: "Marketing & SEO", url: "https://www.semrush.com", euCompliant: true, pricing: { free: false, trial: true, paidFrom: "120€/Monat" }, useCase: "SEO Suite", pros: ["40+ Tools", "Competitor", "Tracking"], cons: ["Sehr teuer", "Überwältigend", "Kredite"] },
+                { name: "Sendinblue", category: "Marketing & SEO", url: "https://www.brevo.com", euCompliant: true, pricing: { free: true, trial: true, paidFrom: "9€/Monat" }, useCase: "Email Marketing", pros: ["EU", "All-in-One", "Free-Tier"], cons: ["UI", "Support", "Templates"] },
+                { name: "CanIRank", category: "Marketing & SEO", url: "https://www.canirank.com", euCompliant: false, pricing: { free: false, trial: true, paidFrom: "49€/Monat" }, useCase: "SEO Software", pros: ["Actionable", "Competitor", "Nischen"], cons: ["US", "Kleinere DB", "Nischen-Tool"] },
+                { name: "Diib", category: "Marketing & SEO", url: "https://diib.com", euCompliant: false, pricing: { free: true, trial: false, paidFrom: "10€/
