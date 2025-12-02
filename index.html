@@ -3,162 +3,1806 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Analyse 2025</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AI Tools Katalog 2025 | Komplettübersicht</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            --green-light: #dcfce7;
+            --green: #22c55e;
+            --green-dark: #16a34a;
+            --blue-light: #dbeafe;
+            --blue: #3b82f6;
+            --blue-dark: #2563eb;
+            --purple-light: #f3e8ff;
+            --purple: #a855f7;
+            --purple-dark: #9333ea;
+            --orange-light: #ffedd5;
+            --orange: #f97316;
+            --red-light: #fee2e2;
+            --red: #ef4444;
+            --amber-light: #fef3c7;
+            --amber: #f59e0b;
+            --cyan-light: #cffafe;
+            --cyan: #06b6d4;
+            --pink-light: #fce7f3;
+            --pink: #ec4899;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .site-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+        .site-header p { color: #94a3b8; font-size: 1rem; }
+
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.75rem; font-weight: 700; color: #60a5fa; }
+        .stat-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .filter-bar {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .filter-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 42px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: var(--text-muted);
+        }
+
+        .filter-select {
+            padding: 10px 32px 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+            cursor: pointer;
+            appearance: none;
+        }
+
+        .filter-select:focus { outline: none; border-color: var(--blue); }
+
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        .results-info {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-header {
+            padding: 16px 16px 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .tool-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .tool-logo svg { width: 20px; height: 20px; }
+
+        .header-content { flex: 1; min-width: 0; }
+
+        .tool-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tool-name .company {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .tool-tagline {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 2px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        .tag svg { width: 10px; height: 10px; }
+
+        .tag.eu { background: var(--blue-light); color: var(--blue-dark); }
+        .tag.dsgvo { background: var(--green-light); color: var(--green-dark); }
+        .tag.gpai { background: var(--purple-light); color: var(--purple-dark); }
+        .tag.tier1 { background: var(--amber-light); color: #92400e; }
+        .tag.tier2 { background: #e0e7ff; color: #3730a3; }
+        .tag.kostenlos { background: var(--green-light); color: var(--green-dark); }
+        .tag.freemium { background: var(--cyan-light); color: #0e7490; }
+        .tag.opensource { background: #fef3c7; color: #92400e; }
+        .tag.paid { background: var(--orange-light); color: #c2410c; }
+        .tag.category { background: #f1f5f9; color: var(--text-secondary); }
+
+        .expand-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+
+        .expand-toggle:hover { background: #f1f5f9; }
+        .expand-toggle span { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+        .expand-toggle svg { width: 14px; height: 14px; color: var(--text-muted); transition: transform 0.3s ease; }
+        .tool-card.expanded .expand-toggle svg { transform: rotate(180deg); }
+
+        .card-expandable { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .tool-card.expanded .card-expandable { max-height: 2000px; }
+
+        .card-body { padding: 14px 16px; border-top: 1px solid var(--border); }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .info-section h4 {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .detail-list { display: flex; flex-direction: column; gap: 4px; }
+        .detail-item { display: flex; font-size: 0.75rem; }
+        .detail-label { color: var(--text-muted); min-width: 80px; flex-shrink: 0; }
+        .detail-value { color: var(--text-primary); font-weight: 500; }
+
+        .zusatz-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-left: 3px solid var(--green);
+            border-radius: 0 8px 8px 0;
+            grid-column: 1 / -1;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+
+        .zusatz-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .zusatz-header:hover { background: rgba(255,255,255,0.3); }
+        .zusatz-header h4 { margin-bottom: 0 !important; color: #15803d; }
+        .zusatz-toggle { width: 14px; height: 14px; color: #15803d; transition: transform 0.3s ease; }
+        .zusatz-box.expanded .zusatz-toggle { transform: rotate(180deg); }
+        .zusatz-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .zusatz-box.expanded .zusatz-content { max-height: 500px; }
+        .zusatz-content-inner { padding: 0 12px 10px; }
+        .zusatz-box p { font-size: 0.75rem; color: #166534; line-height: 1.5; margin-bottom: 6px; }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .pros h4 { color: var(--green-dark); }
+        .cons h4 { color: var(--red); }
+        .list-items { display: flex; flex-direction: column; gap: 4px; }
+        .list-item { display: flex; align-items: flex-start; gap: 5px; font-size: 0.75rem; color: var(--text-secondary); }
+        .list-item svg { width: 12px; height: 12px; flex-shrink: 0; margin-top: 2px; }
+        .list-item.pro svg { color: var(--green); }
+        .list-item.con svg { color: var(--red); }
+
+        .card-footer { padding: 10px 16px 14px; border-top: 1px solid var(--border); }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            transition: filter 0.2s;
+        }
+
+        .btn-primary:hover { filter: brightness(0.9); }
+        .btn-primary svg { width: 12px; height: 12px; }
+
+        .site-footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.85rem;
+        }
+
+        .site-footer a { color: #60a5fa; text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .info-grid, .pros-cons { grid-template-columns: 1fr; }
+            .filter-container { flex-direction: column; }
+            .search-box { width: 100%; }
+        }
+    </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        const { useState } = React;
+    <header class="site-header">
+        <h1>🤖 AI Tools Katalog 2025</h1>
+        <p>Komplettübersicht mit EU-Compliance, Preisen und Bewertungen</p>
+        <div class="header-stats">
+            <div class="stat">
+                <div class="stat-value" id="total-tools">0</div>
+                <div class="stat-label">Tools</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="eu-tools">0</div>
+                <div class="stat-label">EU-Anbieter</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="categories-count">0</div>
+                <div class="stat-label">Kategorien</div>
+            </div>
+        </div>
+    </header>
 
-        const AITools = () => {
-            const [search, setSearch] = useState('');
-            const [category, setCategory] = useState('all');
-            const [expanded, setExpanded] = useState(null);
+    <div class="filter-bar">
+        <div class="filter-container">
+            <div class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" id="search-input" placeholder="Tool suchen...">
+            </div>
+            <select class="filter-select" id="category-filter">
+                <option value="">Alle Kategorien</option>
+            </select>
+            <select class="filter-select" id="eu-filter">
+                <option value="">Alle Regionen</option>
+                <option value="eu">EU-Anbieter</option>
+                <option value="dsgvo">DSGVO-konform</option>
+            </select>
+            <select class="filter-select" id="pricing-filter">
+                <option value="">Alle Preise</option>
+                <option value="kostenlos">Kostenlos</option>
+                <option value="freemium">Freemium (Basis gratis)</option>
+                <option value="opensource">Open Source</option>
+                <option value="kostenpflichtig">Kostenpflichtig</option>
+            </select>
+        </div>
+    </div>
 
-            const tools = [
-                { name: "Make", cat: "Automation", url: "https://www.make.com", eu: true, free: true, price: "9€", use: "Workflow-Automation", pros: ["Canvas-UI", "1500+ Apps", "Gut/Günstig"], cons: ["Lernkurve", "Weniger als Zapier", "Komplex"] },
-                { name: "Zapier", cat: "Automation", url: "https://zapier.com", eu: false, free: true, price: "20€", use: "No-Code", pros: ["8000+ Apps", "Einfach", "AI-Copilot"], cons: ["Teuer", "US", "Linear"] },
-                { name: "n8n", cat: "Automation", url: "https://n8n.io", eu: true, free: true, price: "20€", use: "Open-Source", pros: ["DSGVO", "Self-Host", "LangChain"], cons: ["Technisch", "1000 Apps", "Setup"] },
-                { name: "IFTTT", cat: "Automation", url: "https://ifttt.com", eu: false, free: true, price: "3€", use: "Smart Home", pros: ["Günstig", "Einfach", "IoT"], cons: ["US", "Basic", "Weniger"] },
-                { name: "GitHub", cat: "Developer", url: "https://github.com", eu: false, free: true, price: "4€", use: "Code-Hosting", pros: ["Community", "Actions", "Copilot"], cons: ["Microsoft", "US", "Komplex"] },
-                { name: "GitLab", cat: "Developer", url: "https://gitlab.com", eu: true, free: true, price: "19€", use: "DevOps", pros: ["Self-Host", "All-in-One", "EU"], cons: ["Komplex", "Kleiner", "Resource"] },
-                { name: "Docker", cat: "Developer", url: "https://www.docker.com", eu: false, free: true, price: "5€", use: "Container", pros: ["Plattform-unabhängig", "Hub", "Standard"], cons: ["Lernkurve", "Performance", "License"] },
-                { name: "Kubernetes", cat: "Developer", url: "https://kubernetes.io", eu: true, free: true, price: "Cloud", use: "Orchestrierung", pros: ["Open Source", "Production", "Cloud-agnostic"], cons: ["Sehr komplex", "Overhead", "Steil"] },
-                { name: "ChatGPT", cat: "Writing", url: "https://chat.openai.com", eu: false, free: true, price: "20€", use: "AI-Assistent", pros: ["Vielseitig", "GPT-4", "Plugins"], cons: ["Nicht DSGVO", "Halluzinationen", "Überlastet"] },
-                { name: "Claude AI", cat: "Writing", url: "https://claude.ai", eu: true, free: true, price: "18€", use: "Textverständnis", pros: ["EU-Server", "200K Context", "Weniger Halluz."], cons: ["Weniger Features", "Weniger bekannt", "Vorsichtig"] },
-                { name: "Jasper", cat: "Writing", url: "https://www.jasper.ai", eu: true, free: false, price: "39€", use: "Marketing", pros: ["Templates", "Brand Voice", "SEO"], cons: ["Teuer", "Generisch", "GPT-4"] },
-                { name: "Grammarly", cat: "Writing", url: "https://www.grammarly.com", eu: true, free: true, price: "12€", use: "Grammatik", pros: ["Grammar-Check", "Extension", "Tone"], cons: ["Teuer", "Aggressiv", "Englisch"] },
-                { name: "DeepL", cat: "Writing", url: "https://www.deepl.com", eu: true, free: true, price: "8€", use: "Übersetzung", pros: ["Made in DE", "Beste Qualität", "DSGVO"], cons: ["32 Sprachen", "API teuer", "Keine Website"] },
-                { name: "Copy.ai", cat: "Writing", url: "https://www.copy.ai", eu: false, free: true, price: "36€", use: "Copywriting", pros: ["Templates", "Team", "Workflow"], cons: ["US", "Teuer", "Editing"] },
-                { name: "Rytr", cat: "Writing", url: "https://rytr.me", eu: false, free: true, price: "9€", use: "Budget Writing", pros: ["Günstig", "Templates", "Sprachen"], cons: ["Begrenzt", "Weniger akkurat", "US"] },
-                { name: "QuillBot", cat: "Writing", url: "https://quillbot.com", eu: false, free: true, price: "10€", use: "Paraphrasing", pros: ["Paraphrase", "Citation", "Günstig"], cons: ["US", "Limitiert", "Unnatürlich"] },
-                { name: "Midjourney", cat: "Design", url: "https://www.midjourney.com", eu: false, free: false, price: "10€", use: "Kunst-Bilder", pros: ["Beste Qualität", "Community", "Styles"], cons: ["Discord", "Keine Free", "Rechte"] },
-                { name: "DALL-E", cat: "Design", url: "https://openai.com/dall-e-3", eu: false, free: false, price: "20€", use: "Text-zu-Bild", pros: ["Prompt-Verständnis", "ChatGPT", "Präzise"], cons: ["Weniger künstlerisch", "50/Tag", "Kein Upscale"] },
-                { name: "Canva", cat: "Design", url: "https://www.canva.com", eu: true, free: true, price: "12€", use: "Design", pros: ["Templates", "Magic Studio", "Team"], cons: ["Template-Look", "Performance", "Pro"] },
-                { name: "Figma", cat: "Design", url: "https://www.figma.com", eu: true, free: true, price: "12€", use: "UI/UX", pros: ["Standard", "Real-time", "FigJam"], cons: ["Lernkurve", "Cloud", "Adobe"] },
-                { name: "Stable Diffusion", cat: "Design", url: "https://stability.ai", eu: true, free: true, price: "9€", use: "Open-Source", pros: ["Open Source", "Lokal", "Kontrolle"], cons: ["Setup", "GPU", "Lernkurve"] },
-                { name: "Remove.bg", cat: "Design", url: "https://www.remove.bg", eu: true, free: true, price: "9€", use: "Background", pros: ["Akkurat", "API", "Schnell"], cons: ["Free limitiert", "Nur BG", "Batch"] },
-                { name: "Descript", cat: "Video", url: "https://www.descript.com", eu: true, free: true, price: "12€", use: "Text-Video-Edit", pros: ["Innovativ", "Overdub", "23 Sprachen"], cons: ["Performance", "Unnatürlich", "Limitiert"] },
-                { name: "HeyGen", cat: "Video", url: "https://www.heygen.com", eu: false, free: true, price: "24€", use: "AI-Avatar", pros: ["Avatare", "40+ Sprachen", "Keine Kamera"], cons: ["Uncanny", "Ethik", "Wasserzeichen"] },
-                { name: "Pictory", cat: "Video", url: "https://pictory.ai", eu: true, free: false, price: "23€", use: "Text-zu-Video", pros: ["Blog-to-Video", "Captions", "Stock"], cons: ["Stock-Look", "Limitiert", "Keine Free"] },
-                { name: "InVideo", cat: "Video", url: "https://invideo.io", eu: false, free: true, price: "20€", use: "Video Creation", pros: ["Templates", "Text-to-Video", "Multi-Lang"], cons: ["Wasserzeichen", "Performance", "UI"] },
-                { name: "Filmora", cat: "Video", url: "https://filmora.wondershare.com", eu: true, free: true, price: "50€/J", use: "Video Editor", pros: ["Einsteigerfreundlich", "AI", "Preis"], cons: ["Wasserzeichen", "Weniger Pro", "Jährlich"] },
-                { name: "SurferSEO", cat: "Marketing", url: "https://surferseo.com", eu: true, free: false, price: "69€", use: "On-Page SEO", pros: ["Content Editor", "Intent", "WordPress"], cons: ["Teuer", "US-fokus", "Keyword-Stuffing"] },
-                { name: "Semrush", cat: "Marketing", url: "https://www.semrush.com", eu: true, free: false, price: "120€", use: "SEO Suite", pros: ["40+ Tools", "Competitor", "Tracking"], cons: ["Sehr teuer", "Überwältigend", "Kredite"] },
-                { name: "Sendinblue", cat: "Marketing", url: "https://www.brevo.com", eu: true, free: true, price: "9€", use: "Email Marketing", pros: ["EU", "All-in-One", "Free"], cons: ["UI", "Support", "Templates"] },
-                { name: "Notion AI", cat: "Productivity", url: "https://www.notion.so/product/ai", eu: true, free: false, price: "10€", use: "AI Workspace", pros: ["Integration", "Kontext", "Datenkontrolle"], cons: ["Extra Kosten", "Begrenzt", "Keine Custom"] },
-                { name: "Taskade", cat: "Productivity", url: "https://www.taskade.com", eu: true, free: true, price: "8€", use: "AI Projektmanagement", pros: ["AI-Agents", "Video", "Günstig"], cons: ["Weniger ausgereift", "Klein", "Unpräzise"] },
-                { name: "Reclaim", cat: "Productivity", url: "https://reclaim.ai", eu: false, free: true, price: "8€", use: "Smart Calendar", pros: ["Auto-Schedule", "Habits", "Google"], cons: ["US", "Nur Google", "Lernphase"] },
-                { name: "ClickUp", cat: "Productivity", url: "https://clickup.com", eu: false, free: true, price: "7€", use: "Projektmanagement", pros: ["All-in-One", "Custom", "AI"], cons: ["US", "Komplex", "Lernkurve"] },
-                { name: "Asana", cat: "Productivity", url: "https://asana.com", eu: true, free: true, price: "11€", use: "Aufgaben", pros: ["Clean UI", "Workflows", "Integrationen"], cons: ["Teuer", "Weniger Free", "US"] },
-                { name: "Trello", cat: "Productivity", url: "https://trello.com", eu: true, free: true, price: "5€", use: "Kanban", pros: ["Einfach", "Visuell", "Power-Ups"], cons: ["Limitiert", "Atlassian", "Basic"] },
-                { name: "Google Gemini", cat: "Chatbots", url: "https://gemini.google.com", eu: true, free: true, price: "20€", use: "AI Chatbot", pros: ["Google", "Multimodal", "Web"], cons: ["Weniger kreativ", "Daten", "Halluzinationen"] },
-                { name: "Poe", cat: "Chatbots", url: "https://poe.com", eu: false, free: true, price: "20€", use: "Multi-Model", pros: ["Mehrere Modelle", "Custom", "Free"], cons: ["US", "UI", "Mobile"] },
-                { name: "HuggingChat", cat: "Chatbots", url: "https://huggingface.co/chat", eu: true, free: true, price: "0€", use: "Open-Source", pros: ["Open Source", "Kostenlos", "Privacy"], cons: ["Weniger leistungsfähig", "Basic", "UI"] },
-                { name: "Otter.ai", cat: "Meeting", url: "https://otter.ai", eu: false, free: true, price: "10€", use: "Transkription", pros: ["Echtzeit", "Auto-Join", "Summary"], cons: ["US", "Nur Englisch", "300 Min"] },
-                { name: "Fireflies", cat: "Meeting", url: "https://fireflies.ai", eu: false, free: true, price: "10€", use: "Meeting Assistant", pros: ["CRM", "Intelligence", "Sharing"], cons: ["Datenschutz", "Bot", "Stört"] },
-                { name: "Krisp", cat: "Meeting", url: "https://krisp.ai", eu: true, free: true, price: "8€", use: "Noise Cancel", pros: ["Beste Noise Cancel", "Notes", "Lokal"], cons: ["Nicht 100%", "Robotisch", "Premium"] },
-                { name: "Vercel", cat: "Cloud", url: "https://vercel.com", eu: true, free: true, price: "20€", use: "Frontend Deploy", pros: ["Git Push Live", "Next.js", "CDN"], cons: ["Teuer Traffic", "Lock-in", "Backend"] },
-                { name: "AWS", cat: "Cloud", url: "https://aws.amazon.com", eu: true, free: true, price: "Variabel", use: "Cloud", pros: ["Marktführer", "Alle Services", "EU"], cons: ["Komplex", "Intransparent", "US"] },
-                { name: "Google Cloud", cat: "Cloud", url: "https://cloud.google.com", eu: true, free: true, price: "Variabel", use: "Cloud Platform", pros: ["AI/ML", "Kubernetes", "EU"], cons: ["Google", "Weniger", "Pricing"] },
-                { name: "Azure", cat: "Cloud", url: "https://azure.microsoft.com", eu: true, free: true, price: "Variabel", use: "MS Cloud", pros: ["Enterprise", "Hybrid", "EU"], cons: ["MS", "Teuer", "UI"] },
-                { name: "Perplexity", cat: "Research", url: "https://www.perplexity.ai", eu: false, free: true, price: "20€", use: "AI Search", pros: ["Web-Search", "Quellen", "GPT-4"], cons: ["Veraltete Quellen", "Keine Artikel", "GPT-3.5"] },
-                { name: "ElevenLabs", cat: "Voice", url: "https://elevenlabs.io", eu: true, free: true, price: "5€", use: "Text-to-Speech", pros: ["Best Quality", "Clone 1 Min", "29 Sprachen"], cons: ["Missbrauch", "10K Free", "Commercial"] },
-                { name: "Airtable", cat: "Database", url: "https://www.airtable.com", eu: true, free: true, price: "10€", use: "No-Code DB", pros: ["Intuitiv", "Automation", "Views"], cons: ["Teuer", "Performance", "Formula"] },
-                { name: "Supabase", cat: "Database", url: "https://supabase.com", eu: true, free: true, price: "25€", use: "Open-Source Firebase", pros: ["PostgreSQL", "Real-time", "Self-Host"], cons: ["Tech Setup", "Ecosystem", "UI"] },
-                { name: "Obsidian", cat: "Note-Taking", url: "https://obsidian.md", eu: true, free: true, price: "4€", use: "Knowledge Base", pros: ["Lokal", "Graph", "Plugins"], cons: ["Markdown", "Sync", "Mobile"] }
-            ];
+    <main class="main-content">
+        <div class="results-info" id="results-info"></div>
+        <div class="cards-grid" id="cards-container"></div>
+    </main>
 
-            const cats = ['all', ...new Set(tools.map(t => t.cat))];
-            const filtered = tools.filter(t => 
-                (category === 'all' || t.cat === category) &&
-                (t.name.toLowerCase().includes(search.toLowerCase()) || t.use.toLowerCase().includes(search.toLowerCase()))
-            );
+    <footer class="site-footer">
+        <p>AI Tools Katalog 2025 | <a href="https://github.com/sophrager-art/Toolbox" target="_blank">GitHub</a></p>
+        <p style="margin-top: 8px; font-size: 0.75rem;">Stand: Dezember 2025</p>
+    </footer>
 
-            return (
-                <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
-                    <div className="max-w-6xl mx-auto">
-                        <h1 className="text-4xl font-bold mb-2">AI Tools Analyse 2025</h1>
-                        <p className="text-slate-600 mb-6">50+ Tools mit EU-Compliance und Preisen</p>
-                        
-                        <div className="bg-white rounded-lg shadow p-4 mb-6">
-                            <div className="grid md:grid-cols-2 gap-4">
-                                <input
-                                    type="text"
-                                    placeholder="Suchen..."
-                                    className="px-4 py-2 border rounded-lg"
-                                    value={search}
-                                    onChange={(e) => setSearch(e.target.value)}
-                                />
-                                <select
-                                    className="px-4 py-2 border rounded-lg"
-                                    value={category}
-                                    onChange={(e) => setCategory(e.target.value)}
-                                >
-                                    {cats.map(c => <option key={c} value={c}>{c === 'all' ? 'Alle Kategorien' : c}</option>)}
-                                </select>
-                            </div>
+    <script>
+    const tools = [
+        // ==========================================
+        // FOUNDATION MODELS / ASSISTANTS
+        // ==========================================
+        {
+            id: "chatgpt",
+            name: "ChatGPT",
+            company: "OpenAI",
+            hq: "San Francisco, USA",
+            category: "KI-Assistent",
+            tagline: "Allgemeiner KI-Assistent für Text, Code und Analyse",
+            modelType: "LLM (GPT-5.1)",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Plus 20€/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://chat.openai.com",
+            color: "#10a37f",
+            pros: ["Sehr vielseitig", "Plugins & GPTs", "Multimodal", "Große Community"],
+            cons: ["US-Anbieter", "Datenschutzbedenken", "Rate Limits"],
+            zuspiatzInfo: "ChatGPT ist das meistgenutzte KI-Tool weltweit. GPT-5.1 bietet erweiterte Reasoning-Fähigkeiten."
+        },
+        {
+            id: "claude",
+            name: "Claude",
+            company: "Anthropic",
+            hq: "San Francisco, USA",
+            category: "KI-Assistent",
+            tagline: "KI-Assistent mit Fokus auf Sicherheit und lange Kontexte",
+            modelType: "LLM (Claude 4.5)",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 18€/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://claude.ai",
+            color: "#d97706",
+            pros: ["200k Token Kontext", "Beste Textqualität", "Führend bei Coding", "AI Safety Fokus"],
+            cons: ["Keine Bildgenerierung", "Nutzungslimits", "US-Anbieter"],
+            zusatzInfo: "Claude Opus 4.5 führt bei Programmieraufgaben (72,5% SWE-Bench). Neu: Claude für Excel und Chrome."
+        },
+        {
+            id: "gemini",
+            name: "Gemini",
+            company: "Google",
+            hq: "Mountain View, USA",
+            category: "KI-Assistent",
+            tagline: "Multimodales KI-Modell mit Google-Integration",
+            modelType: "LLM multimodal (Gemini 2.5)",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Advanced 22€/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://gemini.google.com",
+            color: "#4285f4",
+            pros: ["1M Token Kontext", "Google-Integration", "Multimodal inkl. Video", "Vertex AI"],
+            cons: ["Datenschutz", "Google-Abhängigkeit", "Weniger präzise als GPT-5"],
+            zusatzInfo: "Gemini 2.5 Pro bietet bis zu 1 Million Token Kontext und ist tief in Google Workspace integriert."
+        },
+        {
+            id: "perplexity",
+            name: "Perplexity",
+            company: "Perplexity AI",
+            hq: "San Francisco, USA",
+            category: "KI-Suche",
+            tagline: "KI-Suchmaschine mit Quellenangaben",
+            modelType: "LLM mit RAG",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 20$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://www.perplexity.ai",
+            color: "#20808d",
+            pros: ["Echtzeit-Websuche", "Quellenangaben", "Sehr schnell", "Pro Search"],
+            cons: ["US-basiert", "Pro kostenpflichtig"],
+            zusatzInfo: "Perplexity kombiniert LLM mit Echtzeit-Websuche und liefert immer Quellenangaben."
+        },
+        {
+            id: "mistral",
+            name: "Mistral",
+            company: "Mistral AI",
+            hq: "Paris, Frankreich",
+            category: "KI-Assistent",
+            tagline: "Europäisches KI-Modell mit Open-Weight-Optionen",
+            modelType: "LLM (Mistral Large 2)",
+            pricing: "freemium",
+            pricingDetail: "Open-Weights + API",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://mistral.ai",
+            color: "#f97316",
+            pros: ["EU-Anbieter (Paris)", "Open-Weights verfügbar", "Starke Performance", "MoE-Architektur"],
+            cons: ["Kleiner als OpenAI", "Weniger multimodal"],
+            zusatzInfo: "Mistral AI ist das wichtigste europäische KI-Unternehmen. Mixtral nutzt effiziente Mixture-of-Experts."
+        },
+        {
+            id: "llama",
+            name: "Llama 4",
+            company: "Meta",
+            hq: "Menlo Park, USA",
+            category: "Foundation Model",
+            tagline: "Open-Weight Sprachmodell für Self-Hosting",
+            modelType: "LLM Open-Weights",
+            pricing: "opensource",
+            pricingDetail: "Kostenlos (Community License)",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://llama.meta.com",
+            color: "#0668e1",
+            pros: ["Open-Weights", "Self-Hosting möglich", "Große Community", "Basis vieler Projekte"],
+            cons: ["Meta License", "Self-Host komplex", "Ressourcenintensiv"],
+            zusatzInfo: "Llama ist die Basis vieler Open-Source-Projekte und kann lokal oder über Cloud-Provider genutzt werden."
+        },
+        {
+            id: "notebooklm",
+            name: "NotebookLM",
+            company: "Google",
+            hq: "Mountain View, USA",
+            category: "Wissensmanagement",
+            tagline: "KI-Wissensmanagement für eigene Dokumente",
+            modelType: "LLM-basiertes Knowledge-System",
+            pricing: "kostenlos",
+            pricingDetail: "Komplett kostenlos",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://notebooklm.google.com",
+            color: "#34a853",
+            pros: ["Komplett kostenlos", "Audio-Zusammenfassungen", "Quellenbasiert", "Für Research"],
+            cons: ["Keine API", "Google-Konto nötig", "Begrenzte Dokumente"],
+            zusatzInfo: "NotebookLM erstellt Audio-Zusammenfassungen und arbeitet nur mit hochgeladenen Quellen."
+        },
+        // ==========================================
+        // AUTOMATION & WORKFLOW
+        // ==========================================
+        {
+            id: "make",
+            name: "Make",
+            company: "Celonis",
+            hq: "München, Deutschland",
+            category: "Automation",
+            tagline: "Visuelle Workflow-Automation für komplexe Prozesse",
+            modelType: "Workflow-Engine",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Ab 9€/Mo",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://www.make.com",
+            color: "#6d28d9",
+            pros: ["EU-Anbieter (München)", "Canvas-UI intuitiv", "1.800+ Apps", "Besser als Zapier P/L"],
+            cons: ["Lernkurve", "Komplexe Preise", "Kein KI-Tool"],
+            zusatzInfo: "Make (ehemals Integromat) gehört zu Celonis. SOC 2 Type II zertifiziert, DSGVO-konform. Kein KI-Tool – AI Act nicht anwendbar."
+        },
+        {
+            id: "n8n",
+            name: "n8n",
+            company: "n8n GmbH",
+            hq: "Berlin, Deutschland",
+            category: "Automation",
+            tagline: "Open-Source Workflow-Automation mit KI-Nodes",
+            modelType: "Workflow-Engine",
+            pricing: "opensource",
+            pricingDetail: "Self-Host gratis / Cloud ab 20€/Mo",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://n8n.io",
+            color: "#ea4b71",
+            pros: ["EU-Anbieter (Berlin)", "Open Source", "Native AI-Nodes", "Sehr flexibel"],
+            cons: ["Technischer", "Self-Host = DevOps", "Kleinere Community"],
+            zusatzInfo: "n8n ist die beliebte Open-Source-Alternative zu Zapier mit nativen Nodes für OpenAI, Anthropic etc."
+        },
+        {
+            id: "zapier",
+            name: "Zapier",
+            company: "Zapier",
+            hq: "San Francisco, USA",
+            category: "Automation",
+            tagline: "Einfache Workflow-Automation für Business-Apps",
+            modelType: "Workflow-Engine",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Ab 20$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://zapier.com",
+            color: "#ff4a00",
+            pros: ["Sehr einfach", "6.000+ Apps", "Große Community", "Guter Support"],
+            cons: ["US-basiert", "Teuer", "Nur lineare Workflows"],
+            zusatzInfo: "Zapier ist Marktführer für einfache Automationen. Für komplexe Szenarien sind Make oder n8n besser."
+        },
+        // ==========================================
+        // CODING & DEVELOPER TOOLS
+        // ==========================================
+        {
+            id: "github-copilot",
+            name: "GitHub Copilot",
+            company: "GitHub/Microsoft",
+            hq: "San Francisco, USA",
+            category: "Coding",
+            tagline: "KI-Programmierassistent für Code-Vervollständigung",
+            modelType: "LLM Coding",
+            pricing: "kostenpflichtig",
+            pricingDetail: "Ab 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://github.com/features/copilot",
+            color: "#238636",
+            pros: ["Tiefe IDE-Integration", "Sehr gute Qualität", "Chat + Inline", "Standard in Dev-Teams"],
+            cons: ["Kostenpflichtig", "Microsoft-Abhängigkeit", "Lizenzfragen"],
+            zusatzInfo: "GitHub Copilot ist der Quasi-Standard für KI-gestütztes Coding mit VS Code und JetBrains Integration."
+        },
+        {
+            id: "cursor",
+            name: "Cursor",
+            company: "Anysphere",
+            hq: "San Francisco, USA",
+            category: "Coding",
+            tagline: "KI-nativer Code-Editor mit Chat-Integration",
+            modelType: "IDE mit LLM",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 20$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://cursor.sh",
+            color: "#000000",
+            pros: ["Nativer AI-Editor", "Multi-Modell", "Composer für große Änderungen", "Sehr schnell"],
+            cons: ["US-basiert", "Relativ neu", "VS Code Fork"],
+            zusatzInfo: "Cursor ist ein VS Code Fork mit nativer KI-Integration. Der Composer-Mode ermöglicht Änderungen über viele Dateien."
+        },
+        {
+            id: "replit",
+            name: "Replit",
+            company: "Replit",
+            hq: "San Francisco, USA",
+            category: "Coding",
+            tagline: "Browser-basierte IDE mit KI-Assistent",
+            modelType: "Cloud IDE + LLM",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 20$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://replit.com",
+            color: "#f26207",
+            pros: ["Browser-basiert", "Keine Installation", "Ghostwriter AI", "Deployment inkl."],
+            cons: ["US-basiert", "Performance", "Begrenzte Power"],
+            zusatzInfo: "Replit ermöglicht Coding komplett im Browser mit integriertem KI-Assistenten Ghostwriter."
+        },
+        {
+            id: "v0",
+            name: "v0",
+            company: "Vercel",
+            hq: "San Francisco, USA",
+            category: "Coding",
+            tagline: "KI-Generator für React/Next.js Komponenten",
+            modelType: "Code-Generator",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 20$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://v0.dev",
+            color: "#000000",
+            pros: ["Exzellente UI-Komponenten", "shadcn/ui", "Copy-Paste Ready", "Vercel-Integration"],
+            cons: ["Nur React/Next.js", "US-basiert", "Begrenzte Komplexität"],
+            zusatzInfo: "v0 generiert produktionsreife React-Komponenten mit shadcn/ui und Tailwind CSS."
+        },
+        {
+            id: "bolt",
+            name: "Bolt.new",
+            company: "StackBlitz",
+            hq: "USA",
+            category: "Coding",
+            tagline: "Full-Stack Apps mit KI im Browser erstellen",
+            modelType: "Code-Generator",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro verfügbar",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://bolt.new",
+            color: "#3b82f6",
+            pros: ["Full-Stack im Browser", "Sehr schnell", "Preview live", "Multi-Framework"],
+            cons: ["US-basiert", "Noch früh", "Komplexe Apps schwierig"],
+            zusatzInfo: "Bolt.new ermöglicht die Erstellung kompletter Web-Apps direkt im Browser mit Live-Preview."
+        },
+        {
+            id: "lovable",
+            name: "Lovable",
+            company: "Lovable",
+            hq: "Europa",
+            category: "Coding",
+            tagline: "KI-App-Builder für schnelle Prototypen",
+            modelType: "Code-Generator",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro verfügbar",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://lovable.dev",
+            color: "#ec4899",
+            pros: ["Europäischer Anbieter", "Schnelle Prototypen", "Supabase-Integration"],
+            cons: ["Noch früh", "Begrenzte Anpassung"],
+            zusatzInfo: "Lovable (ehemals GPT Engineer) ist ein europäischer KI-App-Builder für schnelle Prototypen."
+        },
+        {
+            id: "langchain",
+            name: "LangChain",
+            company: "LangChain",
+            hq: "San Francisco, USA",
+            category: "Framework",
+            tagline: "Framework zur LLM-Orchestrierung",
+            modelType: "Framework",
+            pricing: "opensource",
+            pricingDetail: "Kostenlos + LangSmith SaaS",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://langchain.com",
+            color: "#1c3c3c",
+            pros: ["Open Source", "De-facto-Standard", "Model-agnostisch", "Große Community"],
+            cons: ["Lernkurve", "Schnelle API-Änderungen", "Overhead"],
+            zusatzInfo: "LangChain ist der Standard für LLM-Orchestrierung, RAG-Pipelines und Agenten-Entwicklung."
+        },
+        {
+            id: "llamaindex",
+            name: "LlamaIndex",
+            company: "LlamaIndex",
+            hq: "USA",
+            category: "Framework",
+            tagline: "Framework für RAG und Enterprise-Daten",
+            modelType: "Framework",
+            pricing: "opensource",
+            pricingDetail: "Kostenlos + Cloud",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.llamaindex.ai",
+            color: "#8b5cf6",
+            pros: ["Open Source", "RAG-spezialisiert", "Gute Doku", "Enterprise-fokussiert"],
+            cons: ["Spezialisierter Fokus", "Weniger bekannt"],
+            zusatzInfo: "LlamaIndex ist für Enterprise-RAG-Projekte optimiert mit Vektordatenbank-Integrationen."
+        },
+        {
+            id: "huggingface",
+            name: "HuggingFace",
+            company: "Hugging Face",
+            hq: "New York, USA",
+            category: "Plattform",
+            tagline: "Hub für Open-Source KI-Modelle",
+            modelType: "Model Hub",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro verfügbar",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://huggingface.co",
+            color: "#ffbd45",
+            pros: ["Standard für Open-Source ML", "500k+ Modelle", "Spaces", "Gute Doku"],
+            cons: ["US-basiert", "Inference teuer"],
+            zusatzInfo: "HuggingFace ist die Standard-Plattform für Open-Source-Modelle mit über 500.000 Modellen."
+        },
+        // ==========================================
+        // IMAGE GENERATION
+        // ==========================================
+        {
+            id: "midjourney",
+            name: "Midjourney",
+            company: "Midjourney",
+            hq: "San Francisco, USA",
+            category: "Bildgenerierung",
+            tagline: "KI-Bildgenerierung mit einzigartigem Stil",
+            modelType: "Diffusionsmodell",
+            pricing: "kostenpflichtig",
+            pricingDetail: "Ab 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://www.midjourney.com",
+            color: "#000000",
+            pros: ["Beste Bildqualität", "Einzigartiger Stil", "Aktive Community", "v7 sehr stark"],
+            cons: ["Nur Discord", "Keine API", "Kostenpflichtig", "Urheberrecht"],
+            zusatzInfo: "Midjourney ist das meistgenutzte Tool für KI-Bilder in kreativen Teams. Bedienung nur über Discord."
+        },
+        {
+            id: "dalle",
+            name: "DALL-E 3",
+            company: "OpenAI",
+            hq: "San Francisco, USA",
+            category: "Bildgenerierung",
+            tagline: "OpenAIs Bildgenerierung mit ChatGPT-Integration",
+            modelType: "Diffusionsmodell",
+            pricing: "freemium",
+            pricingDetail: "In ChatGPT Plus enthalten",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://openai.com/dall-e-3",
+            color: "#10a37f",
+            pros: ["ChatGPT-Integration", "Gutes Textverständnis", "API verfügbar", "Einfach"],
+            cons: ["US-basiert", "Strenge Filter", "Weniger flexibel"],
+            zusatzInfo: "DALL-E 3 ist in ChatGPT Plus integriert und versteht komplexe Textbeschreibungen besonders gut."
+        },
+        {
+            id: "flux",
+            name: "Flux",
+            company: "Black Forest Labs",
+            hq: "Freiburg, Deutschland",
+            category: "Bildgenerierung",
+            tagline: "Deutsches Open-Source Bildgenerierungsmodell",
+            modelType: "Diffusionsmodell",
+            pricing: "opensource",
+            pricingDetail: "Open Source / API verfügbar",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://blackforestlabs.ai",
+            color: "#000000",
+            pros: ["EU-Anbieter (Freiburg)", "Open Source", "Sehr hohe Qualität", "Lokale Nutzung"],
+            cons: ["Ressourcenintensiv", "Noch neu"],
+            zusatzInfo: "Flux von Black Forest Labs (Ex-Stability AI Team) ist das wichtigste europäische Bildgenerierungsmodell. Open Source und lokal nutzbar."
+        },
+        {
+            id: "stable-diffusion",
+            name: "Stable Diffusion",
+            company: "Stability AI",
+            hq: "London, UK",
+            category: "Bildgenerierung",
+            tagline: "Open-Source Bildgenerierung für lokale Nutzung",
+            modelType: "Diffusionsmodell",
+            pricing: "opensource",
+            pricingDetail: "Kostenlos (Self-Host)",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://stability.ai",
+            color: "#8b5cf6",
+            pros: ["Open Source", "Lokal nutzbar", "Sehr anpassbar", "LoRA-Training"],
+            cons: ["GPU erforderlich", "Technisch", "Stability AI instabil"],
+            zusatzInfo: "Stable Diffusion ist das wichtigste Open-Source-Modell für Bildgenerierung mit riesiger Community."
+        },
+        {
+            id: "adobe-firefly",
+            name: "Adobe Firefly",
+            company: "Adobe",
+            hq: "San Jose, USA",
+            category: "Bildgenerierung",
+            tagline: "KI-Bildgenerierung in der Adobe Creative Cloud",
+            modelType: "Diffusionsmodell",
+            pricing: "kostenpflichtig",
+            pricingDetail: "In Creative Cloud enthalten",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://www.adobe.com/products/firefly.html",
+            color: "#ff0000",
+            pros: ["Creative Cloud Integration", "Kommerziell sicher", "Professionell", "Enterprise-ready"],
+            cons: ["Adobe-Abo nötig", "Teuer", "Weniger kreativ"],
+            zusatzInfo: "Firefly ist auf lizenzfreiem Material trainiert – wichtig für kommerzielle Nutzung."
+        },
+        {
+            id: "canva",
+            name: "Canva AI",
+            company: "Canva",
+            hq: "Sydney, Australien",
+            category: "Design",
+            tagline: "KI-gestützte Design-Tools für jedermann",
+            modelType: "Design-Suite mit KI",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 12€/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://www.canva.com",
+            color: "#00c4cc",
+            pros: ["Sehr einfach", "All-in-One", "Magic Tools", "Team-Features"],
+            cons: ["Weniger professionell", "Begrenzte Anpassung"],
+            zusatzInfo: "Canva ist das Massentool für Marketing mit integrierten KI-Features (Magic Media, Write, Design)."
+        },
+        {
+            id: "ideogram",
+            name: "Ideogram",
+            company: "Ideogram",
+            hq: "Toronto, Kanada",
+            category: "Bildgenerierung",
+            tagline: "KI-Bildgenerierung mit bestem Text-Rendering",
+            modelType: "Diffusionsmodell",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 7$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 2,
+            url: "https://ideogram.ai",
+            color: "#6366f1",
+            pros: ["Bestes Text-Rendering", "Günstig", "Web-Interface", "Gute Qualität"],
+            cons: ["Weniger bekannt", "Kanada-basiert"],
+            zusatzInfo: "Ideogram ist besonders stark beim Rendern von Text in Bildern – ein Schwachpunkt anderer Modelle."
+        },
+        {
+            id: "leonardo",
+            name: "Leonardo.ai",
+            company: "Leonardo AI",
+            hq: "Sydney, Australien",
+            category: "Bildgenerierung",
+            tagline: "KI-Bildgenerierung für Game Assets und Konzeptkunst",
+            modelType: "Diffusionsmodell",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 2,
+            url: "https://leonardo.ai",
+            color: "#8b5cf6",
+            pros: ["Game Assets", "Eigene Modelle trainieren", "Gute Kontrolle", "Web-UI"],
+            cons: ["Spezialisiert", "Token-System"],
+            zusatzInfo: "Leonardo.ai ist besonders für Game-Entwickler und Konzeptkünstler interessant."
+        },
+        // ==========================================
+        // VIDEO GENERATION
+        // ==========================================
+        {
+            id: "runway",
+            name: "Runway",
+            company: "Runway",
+            hq: "New York, USA",
+            category: "Videogenerierung",
+            tagline: "KI-Video-Generierung und -Bearbeitung",
+            modelType: "Video-Modell (Gen-3)",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Ab 12$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://runwayml.com",
+            color: "#000000",
+            pros: ["Führend bei Video-KI", "Text-to-Video", "Image-to-Video", "Professionell"],
+            cons: ["Teuer", "Kurze Clips", "US-basiert"],
+            zusatzInfo: "Runway Gen-3 Alpha ist eines der besten Text-to-Video Modelle am Markt."
+        },
+        {
+            id: "pika",
+            name: "Pika",
+            company: "Pika Labs",
+            hq: "San Francisco, USA",
+            category: "Videogenerierung",
+            tagline: "KI-Kurzvideos für Social Media",
+            modelType: "Video-Modell",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 8$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 2,
+            url: "https://pika.art",
+            color: "#a855f7",
+            pros: ["Einfach", "Günstig", "Social Content", "Schnell"],
+            cons: ["Weniger professionell", "Keine API", "Kurze Clips"],
+            zusatzInfo: "Pika fokussiert auf kurze, virale Videos für Social Media."
+        },
+        {
+            id: "kling",
+            name: "Kling",
+            company: "Kuaishou",
+            hq: "Peking, China",
+            category: "Videogenerierung",
+            tagline: "Chinesisches Video-Generierungsmodell",
+            modelType: "Video-Modell",
+            pricing: "freemium",
+            pricingDetail: "Credits-basiert",
+            isEU: false,
+            isDSGVO: false,
+            isGPAI: true,
+            tier: 2,
+            url: "https://klingai.com",
+            color: "#000000",
+            pros: ["Sehr gute Qualität", "Lange Videos möglich", "Günstig"],
+            cons: ["China-basiert", "DSGVO unklar", "Zensur"],
+            zusatzInfo: "Kling produziert beeindruckende Videos, aber Datenschutz ist bei chinesischen Anbietern kritisch."
+        },
+        {
+            id: "sora",
+            name: "Sora",
+            company: "OpenAI",
+            hq: "San Francisco, USA",
+            category: "Videogenerierung",
+            tagline: "OpenAIs Text-to-Video Modell",
+            modelType: "Video-Modell",
+            pricing: "kostenpflichtig",
+            pricingDetail: "In ChatGPT Pro",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://openai.com/sora",
+            color: "#10a37f",
+            pros: ["Sehr hohe Qualität", "Längere Videos", "OpenAI Ökosystem"],
+            cons: ["Noch limitiert", "Teuer", "US-basiert"],
+            zusatzInfo: "Sora ist OpenAIs Video-Modell mit beeindruckender Qualität, aber noch limitiertem Zugang."
+        },
+        {
+            id: "synthesia",
+            name: "Synthesia",
+            company: "Synthesia",
+            hq: "London, UK",
+            category: "Videogenerierung",
+            tagline: "KI-Avatar-Videos für Training und Marketing",
+            modelType: "Avatar-Video",
+            pricing: "kostenpflichtig",
+            pricingDetail: "Ab 22$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 2,
+            url: "https://www.synthesia.io",
+            color: "#0ea5e9",
+            pros: ["Realistische Avatare", "120+ Sprachen", "Enterprise-ready", "Kein Equipment"],
+            cons: ["Teuer", "Avatare erkennbar"],
+            zusatzInfo: "Synthesia ist Standard für L&D und HR-Videos mit KI-Avataren."
+        },
+        {
+            id: "heygen",
+            name: "HeyGen",
+            company: "HeyGen",
+            hq: "Los Angeles, USA",
+            category: "Videogenerierung",
+            tagline: "KI-Avatar-Videos und Video-Übersetzung",
+            modelType: "Avatar-Video",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Ab 24$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 2,
+            url: "https://www.heygen.com",
+            color: "#6366f1",
+            pros: ["Video-Übersetzung", "Lip-Sync", "Viele Avatare", "API"],
+            cons: ["US-basiert", "Teuer bei Volumen"],
+            zusatzInfo: "HeyGen bietet exzellente Video-Übersetzung mit Lip-Sync in andere Sprachen."
+        },
+        // ==========================================
+        // AUDIO & VOICE
+        // ==========================================
+        {
+            id: "elevenlabs",
+            name: "ElevenLabs",
+            company: "ElevenLabs",
+            hq: "New York, USA",
+            category: "Audio/Voice",
+            tagline: "Hochwertige KI-Stimmen und Voice-Cloning",
+            modelType: "TTS / Voice Model",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Ab 5$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://elevenlabs.io",
+            color: "#000000",
+            pros: ["Beste TTS-Qualität", "Voice Cloning", "Viele Sprachen", "Gute API"],
+            cons: ["Ethik bei Cloning", "Teuer bei Volumen"],
+            zusatzInfo: "ElevenLabs ist die Referenz für synthetische Stimmen. Voice Cloning mit wenigen Minuten Audio."
+        },
+        {
+            id: "suno",
+            name: "Suno",
+            company: "Suno",
+            hq: "Cambridge, USA",
+            category: "Audio/Musik",
+            tagline: "KI-Musikgenerierung aus Text",
+            modelType: "Musik-Modell",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 1,
+            url: "https://suno.com",
+            color: "#000000",
+            pros: ["Komplette Songs", "Lyrics + Musik", "Sehr einfach", "Gute Qualität"],
+            cons: ["US-basiert", "Urheberrecht unklar", "Begrenzte Kontrolle"],
+            zusatzInfo: "Suno generiert komplette Songs mit Gesang aus Text-Prompts. Sehr beeindruckende Ergebnisse."
+        },
+        {
+            id: "udio",
+            name: "Udio",
+            company: "Udio",
+            hq: "USA",
+            category: "Audio/Musik",
+            tagline: "KI-Musikgenerierung mit hoher Audioqualität",
+            modelType: "Musik-Modell",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro verfügbar",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: true,
+            tier: 2,
+            url: "https://www.udio.com",
+            color: "#6366f1",
+            pros: ["Hohe Audioqualität", "Verschiedene Genres", "Web-basiert"],
+            cons: ["Noch neu", "US-basiert", "Urheberrecht"],
+            zusatzInfo: "Udio ist Sunos Hauptkonkurrent mit Fokus auf Audioqualität."
+        },
+        {
+            id: "whisper",
+            name: "Whisper",
+            company: "OpenAI",
+            hq: "San Francisco, USA",
+            category: "Audio/Voice",
+            tagline: "Open-Source Spracherkennung",
+            modelType: "Speech-to-Text",
+            pricing: "opensource",
+            pricingDetail: "Kostenlos (Open Source)",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://openai.com/research/whisper",
+            color: "#10a37f",
+            pros: ["Open Source", "Sehr genau", "Viele Sprachen", "Lokal nutzbar"],
+            cons: ["Nur Transkription", "Ressourcenintensiv"],
+            zusatzInfo: "Whisper ist OpenAIs Open-Source-Modell für Spracherkennung mit exzellenter Genauigkeit."
+        },
+        {
+            id: "descript",
+            name: "Descript",
+            company: "Descript",
+            hq: "San Francisco, USA",
+            category: "Audio/Video",
+            tagline: "KI-gestützte Audio/Video-Bearbeitung",
+            modelType: "Editor + KI",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 12$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.descript.com",
+            color: "#4f46e5",
+            pros: ["Text-basiertes Editing", "Overdub (Voice Clone)", "Filler-Word Removal", "Screen Recording"],
+            cons: ["US-basiert", "Lernkurve"],
+            zusatzInfo: "Descript ermöglicht Video/Audio-Editing durch Bearbeiten des Transkripts."
+        },
+        {
+            id: "otterai",
+            name: "Otter.ai",
+            company: "Otter.ai",
+            hq: "Mountain View, USA",
+            category: "Audio/Voice",
+            tagline: "KI-Transkription für Meetings",
+            modelType: "Speech-to-Text",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://otter.ai",
+            color: "#3b82f6",
+            pros: ["Live-Transkription", "Meeting-Integration", "Zusammenfassungen", "Suche"],
+            cons: ["US-basiert", "Englisch am besten"],
+            zusatzInfo: "Otter.ai transkribiert Meetings live und integriert mit Zoom, Teams, etc."
+        },
+        // ==========================================
+        // WRITING & CONTENT
+        // ==========================================
+        {
+            id: "deepl",
+            name: "DeepL",
+            company: "DeepL",
+            hq: "Köln, Deutschland",
+            category: "Übersetzung",
+            tagline: "KI-Übersetzung mit höchster Qualität",
+            modelType: "Neural MT",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 9€/Mo",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://www.deepl.com",
+            color: "#0f2b46",
+            pros: ["EU-Anbieter (Köln)", "Beste Qualität", "DSGVO-konform", "API verfügbar"],
+            cons: ["Begrenzte Sprachen", "Write extra"],
+            zusatzInfo: "DeepL aus Köln ist der beste KI-Übersetzer und besonders für EU-Unternehmen relevant."
+        },
+        {
+            id: "grammarly",
+            name: "Grammarly",
+            company: "Grammarly",
+            hq: "San Francisco, USA",
+            category: "Schreibassistent",
+            tagline: "KI-Schreibhilfe und Grammatikprüfung",
+            modelType: "NLP / LLM",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Premium 12$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://www.grammarly.com",
+            color: "#15c39a",
+            pros: ["Browser-Extension", "Überall einsetzbar", "Tone Detection", "Gute Korrekturen"],
+            cons: ["US-basiert", "Premium teuer", "Datenschutz"],
+            zusatzInfo: "Grammarly ist der Standard für Schreibassistenz mit Browser-Erweiterungen für alle Plattformen."
+        },
+        {
+            id: "languagetool",
+            name: "LanguageTool",
+            company: "LanguageTool",
+            hq: "Potsdam, Deutschland",
+            category: "Schreibassistent",
+            tagline: "Open-Source Grammatikprüfung",
+            modelType: "NLP",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Premium 5€/Mo",
+            isEU: true,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://languagetool.org",
+            color: "#6366f1",
+            pros: ["EU-Anbieter (Potsdam)", "Open Source Kern", "DSGVO-konform", "Günstig"],
+            cons: ["Weniger Features als Grammarly"],
+            zusatzInfo: "LanguageTool ist die europäische Grammarly-Alternative mit Open-Source-Kern."
+        },
+        {
+            id: "notion-ai",
+            name: "Notion AI",
+            company: "Notion",
+            hq: "San Francisco, USA",
+            category: "Produktivität",
+            tagline: "KI-Funktionen im All-in-One Workspace",
+            modelType: "LLM-Integration",
+            pricing: "kostenpflichtig",
+            pricingDetail: "+10$/Mo pro Nutzer",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 1,
+            url: "https://www.notion.so",
+            color: "#000000",
+            pros: ["Tiefe Integration", "Zusammenfassungen", "Team-Features", "Vielseitig"],
+            cons: ["Aufpreis", "Nur in Notion", "US-basiert"],
+            zusatzInfo: "Notion AI ist direkt im Workspace integriert für Schreiben, Zusammenfassen und Analysieren."
+        },
+        {
+            id: "jasper",
+            name: "Jasper",
+            company: "Jasper",
+            hq: "Austin, USA",
+            category: "Content/Marketing",
+            tagline: "KI-Texte für Marketing und Brand Content",
+            modelType: "LLM-Produkt",
+            pricing: "kostenpflichtig",
+            pricingDetail: "Ab 39$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.jasper.ai",
+            color: "#ff5c35",
+            pros: ["Marketing-fokussiert", "Brand Voice", "Templates", "Team-Features"],
+            cons: ["Teuer", "US-basiert"],
+            zusatzInfo: "Jasper fokussiert auf Marketing-Content mit Brand Voice und speziellen Templates."
+        },
+        {
+            id: "writer",
+            name: "Writer",
+            company: "Writer",
+            hq: "San Francisco, USA",
+            category: "Content/Marketing",
+            tagline: "Enterprise-KI für markenkonformes Schreiben",
+            modelType: "LLM (Palmyra)",
+            pricing: "kostenpflichtig",
+            pricingDetail: "Enterprise-Pricing",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://writer.com",
+            color: "#6366f1",
+            pros: ["Eigene Modelle", "Governance", "Brand Voice", "Enterprise"],
+            cons: ["Teuer", "Enterprise-fokussiert"],
+            zusatzInfo: "Writer nutzt eigene Palmyra-Modelle mit Fokus auf Governance & Compliance."
+        },
+        {
+            id: "copyai",
+            name: "Copy.ai",
+            company: "Copy.ai",
+            hq: "New York, USA",
+            category: "Content/Marketing",
+            tagline: "KI für Sales- und Marketing-Automatisierung",
+            modelType: "LLM-Produkt",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 36$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.copy.ai",
+            color: "#7c3aed",
+            pros: ["Sales-fokussiert", "Workflow-Automation", "Freemium"],
+            cons: ["Generische Texte", "US-basiert"],
+            zusatzInfo: "Copy.ai positioniert sich als Workflow- und Sales-Layer mit KI-Automatisierung."
+        },
+        // ==========================================
+        // COLLABORATION & PRODUCTIVITY
+        // ==========================================
+        {
+            id: "miro",
+            name: "Miro AI",
+            company: "Miro",
+            hq: "San Francisco, USA",
+            category: "Kollaboration",
+            tagline: "KI-Funktionen für visuelle Zusammenarbeit",
+            modelType: "LLM-Integration",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Team 8$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://miro.com",
+            color: "#ffd02f",
+            pros: ["Whiteboard-Integration", "Workshops", "Team-Features", "Integrationen"],
+            cons: ["AI als Zusatz", "US-basiert"],
+            zusatzInfo: "Miro AI hilft bei Clustering, Zusammenfassungen und Ideation auf Whiteboards."
+        },
+        {
+            id: "figma",
+            name: "Figma AI",
+            company: "Figma",
+            hq: "San Francisco, USA",
+            category: "Design",
+            tagline: "KI-gestützte Design-Funktionen",
+            modelType: "LLM + Design",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 12$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.figma.com",
+            color: "#f24e1e",
+            pros: ["UI-Design Standard", "AI-Features", "Collaboration", "Dev-Mode"],
+            cons: ["AI noch früh", "US-basiert"],
+            zusatzInfo: "Figma AI bietet Wireframe-Generierung und Layout-Vorschläge."
+        },
+        {
+            id: "beautiful-ai",
+            name: "Beautiful.ai",
+            company: "Beautiful.ai",
+            hq: "San Francisco, USA",
+            category: "Präsentationen",
+            tagline: "KI-gestützte Präsentationserstellung",
+            modelType: "Design-KI",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 12$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.beautiful.ai",
+            color: "#4f46e5",
+            pros: ["Auto-Layout", "Schöne Templates", "Einfach", "Team-Features"],
+            cons: ["US-basiert", "Weniger Kontrolle"],
+            zusatzInfo: "Beautiful.ai layoutet Slides automatisch und hält sie konsistent."
+        },
+        {
+            id: "gamma",
+            name: "Gamma",
+            company: "Gamma",
+            hq: "San Francisco, USA",
+            category: "Präsentationen",
+            tagline: "KI-Präsentationen aus Text generieren",
+            modelType: "LLM + Design",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 8$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://gamma.app",
+            color: "#8b5cf6",
+            pros: ["Text zu Präsentation", "Schönes Design", "Web-first", "Günstig"],
+            cons: ["US-basiert", "Weniger Export-Optionen"],
+            zusatzInfo: "Gamma generiert komplette Präsentationen aus Text-Input."
+        },
+        // ==========================================
+        // RESEARCH & ANALYSIS
+        // ==========================================
+        {
+            id: "elicit",
+            name: "Elicit",
+            company: "Elicit",
+            hq: "San Francisco, USA",
+            category: "Research",
+            tagline: "KI-Assistent für wissenschaftliche Recherche",
+            modelType: "LLM + RAG",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://elicit.com",
+            color: "#3b82f6",
+            pros: ["Paper-Suche", "Zusammenfassungen", "Literaturübersicht", "Kostenlos nutzbar"],
+            cons: ["Englisch-fokussiert", "US-basiert"],
+            zusatzInfo: "Elicit ist spezialisiert auf wissenschaftliche Recherche und Literaturübersichten."
+        },
+        {
+            id: "consensus",
+            name: "Consensus",
+            company: "Consensus",
+            hq: "USA",
+            category: "Research",
+            tagline: "KI-Suche in wissenschaftlichen Papers",
+            modelType: "LLM + RAG",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro verfügbar",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://consensus.app",
+            color: "#22c55e",
+            pros: ["Evidenz-basiert", "Paper-Zusammenfassungen", "Quellenangaben"],
+            cons: ["US-basiert", "Englisch-fokussiert"],
+            zusatzInfo: "Consensus durchsucht wissenschaftliche Literatur und gibt evidenz-basierte Antworten."
+        },
+        {
+            id: "scite",
+            name: "scite",
+            company: "scite",
+            hq: "New York, USA",
+            category: "Research",
+            tagline: "KI für Zitationsanalyse",
+            modelType: "NLP",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 10$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://scite.ai",
+            color: "#6366f1",
+            pros: ["Smart Citations", "Supporting vs. Contrasting", "Browser-Extension"],
+            cons: ["US-basiert", "Spezialisiert"],
+            zusatzInfo: "scite analysiert Zitationen und zeigt, ob Papers unterstützt oder widerlegt werden."
+        },
+        // ==========================================
+        // DATA & ANALYTICS
+        // ==========================================
+        {
+            id: "julius",
+            name: "Julius",
+            company: "Julius AI",
+            hq: "San Francisco, USA",
+            category: "Datenanalyse",
+            tagline: "KI-Datenanalyse für jedermann",
+            modelType: "LLM + Code",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 20$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://julius.ai",
+            color: "#f97316",
+            pros: ["Chat mit Daten", "Visualisierungen", "Keine Coding-Skills nötig"],
+            cons: ["US-basiert", "Begrenzte Komplexität"],
+            zusatzInfo: "Julius ermöglicht Datenanalyse durch natürliche Sprache ohne Programmierung."
+        },
+        // ==========================================
+        // AGENTS & SPECIALIZED
+        // ==========================================
+        {
+            id: "chatbase",
+            name: "Chatbase",
+            company: "Chatbase",
+            hq: "USA",
+            category: "Chatbot-Builder",
+            tagline: "Custom ChatGPT für eigene Daten",
+            modelType: "LLM + RAG",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 19$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.chatbase.co",
+            color: "#000000",
+            pros: ["Eigene Daten", "Website-Embed", "Einfach", "API"],
+            cons: ["US-basiert", "Begrenzte Anpassung"],
+            zusatzInfo: "Chatbase ermöglicht die Erstellung von Chatbots trainiert auf eigenen Dokumenten."
+        },
+        {
+            id: "voiceflow",
+            name: "Voiceflow",
+            company: "Voiceflow",
+            hq: "Toronto, Kanada",
+            category: "Chatbot-Builder",
+            tagline: "No-Code Plattform für KI-Assistenten",
+            modelType: "Agent Builder",
+            pricing: "freemium",
+            pricingDetail: "Basis gratis / Pro 50$/Mo",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://www.voiceflow.com",
+            color: "#3b82f6",
+            pros: ["Visueller Builder", "Multi-Channel", "Team-Features", "Integrationen"],
+            cons: ["Teuer", "Lernkurve"],
+            zusatzInfo: "Voiceflow ist eine professionelle Plattform für komplexe KI-Assistenten."
+        },
+        {
+            id: "openrouter",
+            name: "OpenRouter",
+            company: "OpenRouter",
+            hq: "USA",
+            category: "API Gateway",
+            tagline: "Unified API für alle LLM-Modelle",
+            modelType: "API Gateway",
+            pricing: "freemium",
+            pricingDetail: "Pay-per-use",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://openrouter.ai",
+            color: "#6366f1",
+            pros: ["Alle Modelle über eine API", "Fallbacks", "Günstig", "Flexibel"],
+            cons: ["US-basiert", "Zusätzlicher Layer"],
+            zusatzInfo: "OpenRouter bietet Zugang zu GPT-4, Claude, Llama etc. über eine einheitliche API."
+        },
+        {
+            id: "together",
+            name: "Together AI",
+            company: "Together AI",
+            hq: "San Francisco, USA",
+            category: "API Gateway",
+            tagline: "Hosting für Open-Source LLMs",
+            modelType: "Inference API",
+            pricing: "freemium",
+            pricingDetail: "Pay-per-use",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://together.ai",
+            color: "#22c55e",
+            pros: ["Günstige Inferenz", "Open-Source Modelle", "Schnell", "Gute API"],
+            cons: ["US-basiert"],
+            zusatzInfo: "Together AI bietet günstige Inferenz für Llama, Mistral und andere Open-Source Modelle."
+        },
+        {
+            id: "replicate",
+            name: "Replicate",
+            company: "Replicate",
+            hq: "San Francisco, USA",
+            category: "API Gateway",
+            tagline: "Cloud-API für ML-Modelle",
+            modelType: "Inference API",
+            pricing: "freemium",
+            pricingDetail: "Pay-per-use",
+            isEU: false,
+            isDSGVO: true,
+            isGPAI: false,
+            tier: 2,
+            url: "https://replicate.com",
+            color: "#000000",
+            pros: ["Viele Modelle", "Einfache API", "Eigene Modelle hosten"],
+            cons: ["US-basiert", "Kosten schwer vorhersehbar"],
+            zusatzInfo: "Replicate hostet tausende ML-Modelle mit einfacher API."
+        }
+    ];
+
+    // Populate category filter
+    const categories = [...new Set(tools.map(t => t.category))].sort();
+    const categoryFilter = document.getElementById('category-filter');
+    categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        categoryFilter.appendChild(option);
+    });
+
+    // Update stats
+    document.getElementById('total-tools').textContent = tools.length;
+    document.getElementById('eu-tools').textContent = tools.filter(t => t.isEU).length;
+    document.getElementById('categories-count').textContent = categories.length;
+
+    function filterTools() {
+        const search = document.getElementById('search-input').value.toLowerCase();
+        const category = document.getElementById('category-filter').value;
+        const euFilter = document.getElementById('eu-filter').value;
+        const pricingFilter = document.getElementById('pricing-filter').value;
+
+        return tools.filter(tool => {
+            const matchesSearch = !search || 
+                tool.name.toLowerCase().includes(search) ||
+                tool.company.toLowerCase().includes(search) ||
+                tool.tagline.toLowerCase().includes(search) ||
+                tool.category.toLowerCase().includes(search);
+            
+            const matchesCategory = !category || tool.category === category;
+            
+            let matchesEU = true;
+            if (euFilter === 'eu') matchesEU = tool.isEU;
+            if (euFilter === 'dsgvo') matchesEU = tool.isDSGVO;
+
+            let matchesPricing = true;
+            if (pricingFilter) matchesPricing = tool.pricing === pricingFilter;
+
+            return matchesSearch && matchesCategory && matchesEU && matchesPricing;
+        });
+    }
+
+    function getPricingTag(pricing) {
+        switch(pricing) {
+            case 'kostenlos': return '<span class="tag kostenlos">✓ Kostenlos</span>';
+            case 'freemium': return '<span class="tag freemium">🆓 Basis gratis</span>';
+            case 'opensource': return '<span class="tag opensource">📖 Open Source</span>';
+            case 'kostenpflichtig': return '<span class="tag paid">💰 Kostenpflichtig</span>';
+            default: return '';
+        }
+    }
+
+    function renderTools() {
+        const filtered = filterTools();
+        const container = document.getElementById('cards-container');
+        document.getElementById('results-info').textContent = `${filtered.length} von ${tools.length} Tools`;
+
+        container.innerHTML = filtered.map(tool => `
+            <div class="tool-card" id="card-${tool.id}">
+                <div class="card-header">
+                    <div class="tool-logo" style="background: ${tool.color}; color: ${tool.color === '#ffffff' || tool.color === '#ffbd45' || tool.color === '#ffd02f' ? '#000' : '#fff'}">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/>
+                        </svg>
+                    </div>
+                    <div class="header-content">
+                        <div class="tool-name">
+                            ${tool.name}
+                            <span class="company">(${tool.company})</span>
                         </div>
-
-                        <div className="space-y-3">
-                            {filtered.map(t => (
-                                <div key={t.name} className="bg-white rounded-lg shadow p-4">
-                                    <div className="cursor-pointer" onClick={() => setExpanded(expanded === t.name ? null : t.name)}>
-                                        <div className="flex justify-between items-start">
-                                            <div>
-                                                <h3 className="text-xl font-bold">{t.name}</h3>
-                                                <p className="text-slate-600 text-sm">{t.use}</p>
-                                                <div className="flex gap-2 mt-2">
-                                                    <span className={`px-2 py-1 rounded text-xs ${t.eu ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}`}>
-                                                        {t.eu ? '🇪🇺 EU' : '⚠️ Nicht EU'}
-                                                    </span>
-                                                    {t.free && <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs">✓ Free</span>}
-                                                    <span className="px-2 py-1 bg-slate-100 rounded text-xs">💰 {t.price}/Mo</span>
-                                                    <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">{t.cat}</span>
-                                                </div>
-                                            </div>
-                                            <div>{expanded === t.name ? '▲' : '▼'}</div>
-                                        </div>
-                                    </div>
-                                    
-                                    {expanded === t.name && (
-                                        <div className="mt-4 pt-4 border-t grid md:grid-cols-2 gap-4">
-                                            <div>
-                                                <h4 className="font-bold text-green-700 mb-2">✓ Vorteile</h4>
-                                                <ul className="space-y-1">
-                                                    {t.pros.map((p, i) => <li key={i} className="text-sm">• {p}</li>)}
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-red-700 mb-2">✗ Nachteile</h4>
-                                                <ul className="space-y-1">
-                                                    {t.cons.map((c, i) => <li key={i} className="text-sm">• {c}</li>)}
-                                                </ul>
-                                            </div>
-                                            <div className="md:col-span-2 mt-4">
-                                                <a href={t.url} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                                                    Tool besuchen →
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="mt-6 text-center text-slate-600">
-                            {filtered.length} Tools gefunden
+                        <p class="tool-tagline">${tool.tagline}</p>
+                        <div class="tags-row">
+                            ${tool.isEU ? '<span class="tag eu">🇪🇺 EU</span>' : ''}
+                            ${tool.isDSGVO && !tool.isEU ? '<span class="tag dsgvo">🛡️ DSGVO</span>' : ''}
+                            ${tool.isGPAI ? '<span class="tag gpai">🤖 GPAI</span>' : ''}
+                            ${tool.tier === 1 ? '<span class="tag tier1">⭐ Tier-1</span>' : ''}
+                            ${getPricingTag(tool.pricing)}
+                            <span class="tag category">${tool.category}</span>
                         </div>
                     </div>
                 </div>
-            );
-        };
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<AITools />);
+                <div class="expand-toggle" onclick="toggleCard('card-${tool.id}')">
+                    <span>Details</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+
+                <div class="card-expandable">
+                    <div class="card-body">
+                        <div class="info-grid">
+                            <div class="info-section">
+                                <h4>📋 Details</h4>
+                                <div class="detail-list">
+                                    <div class="detail-item">
+                                        <span class="detail-label">Standort</span>
+                                        <span class="detail-value">${tool.hq}</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Typ</span>
+                                        <span class="detail-value">${tool.modelType}</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Preis</span>
+                                        <span class="detail-value">${tool.pricingDetail}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-section">
+                                <h4>🎯 Kategorie</h4>
+                                <p style="font-size: 0.75rem; color: var(--text-secondary);">${tool.category}</p>
+                            </div>
+
+                            ${tool.zusatzInfo ? `
+                            <div class="zusatz-box" id="zusatz-${tool.id}">
+                                <div class="zusatz-header" onclick="toggleZusatz('zusatz-${tool.id}')">
+                                    <h4>📚 Zusatzinfo</h4>
+                                    <svg class="zusatz-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                                </div>
+                                <div class="zusatz-content">
+                                    <div class="zusatz-content-inner">
+                                        <p>${tool.zusatzInfo}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="info-section pros">
+                                <h4>✅ Vorteile</h4>
+                                <div class="list-items">
+                                    ${tool.pros.map(p => `<div class="list-item pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span>${p}</span></div>`).join('')}
+                                </div>
+                            </div>
+                            <div class="info-section cons">
+                                <h4>❌ Nachteile</h4>
+                                <div class="list-items">
+                                    ${tool.cons.map(c => `<div class="list-item con"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg><span>${c}</span></div>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="${tool.url}" class="btn-primary" style="background: ${tool.color}; ${tool.color === '#ffffff' || tool.color === '#ffbd45' || tool.color === '#ffd02f' ? 'color: #000; border: 1px solid #ccc;' : ''}" target="_blank">
+                            Besuchen
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function toggleCard(cardId) {
+        const card = document.getElementById(cardId);
+        card.classList.toggle('expanded');
+        const toggleText = card.querySelector('.expand-toggle span');
+        toggleText.textContent = card.classList.contains('expanded') ? 'Schließen' : 'Details';
+    }
+
+    function toggleZusatz(zusatzId) {
+        document.getElementById(zusatzId).classList.toggle('expanded');
+    }
+
+    document.getElementById('search-input').addEventListener('input', renderTools);
+    document.getElementById('category-filter').addEventListener('change', renderTools);
+    document.getElementById('eu-filter').addEventListener('change', renderTools);
+    document.getElementById('pricing-filter').addEventListener('change', renderTools);
+
+    renderTools();
     </script>
 </body>
 </html>
