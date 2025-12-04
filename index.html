@@ -12,27 +12,31 @@
         }
         
         :root {
-            --bg-primary: #0a0a0a;
+            --bg-primary: #0f0f0f;
             --bg-secondary: #1a1a1a;
-            --bg-card: #2a2a2a;
+            --bg-card: #252525;
             --text-primary: #f5f5f5;
-            --text-secondary: #c9b896;
-            --accent: #d4a574;
-            --accent-dark: #b8935f;
-            --border: rgba(212, 165, 116, 0.2);
-            --success: #a89968;
-            --danger: #c47d5f;
+            --text-secondary: #a8a8a8;
+            --accent: #c4b5a0;
+            --accent-dark: #9d8b73;
+            --border: rgba(196, 181, 160, 0.15);
+            --success: #8a8a8a;
+            --danger: #6a6a6a;
+            --button-text: #ffffff;
         }
         
         body.light-mode {
-            --bg-primary: #faf8f3;
-            --bg-secondary: #f5f1e8;
+            --bg-primary: #fafafa;
+            --bg-secondary: #f5f5f5;
             --bg-card: #ffffff;
-            --text-primary: #2c2416;
-            --text-secondary: #8b7355;
-            --accent: #b8935f;
-            --accent-dark: #9d7d4f;
-            --border: rgba(184, 147, 95, 0.2);
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #8a7a65;
+            --accent-dark: #6d5f4d;
+            --border: rgba(138, 122, 101, 0.2);
+            --success: #4a4a4a;
+            --danger: #2a2a2a;
+            --button-text: #ffffff;
         }
         
         body {
@@ -52,10 +56,10 @@
         header {
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+            background: linear-gradient(135deg, #c4b5a0 0%, #9d8b73 100%);
             border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(212, 165, 116, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             position: relative;
         }
         
@@ -134,13 +138,14 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
-            color: white;
+            background: linear-gradient(135deg, #8a7a65 0%, #6d5f4d 100%);
+            color: var(--button-text);
             font-size: 0.9rem;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-weight: 500;
         }
         
         .btn:hover:not(:disabled) {
@@ -218,7 +223,7 @@
         
         .tool-header {
             padding: 20px;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(184, 147, 95, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(196, 181, 160, 0.15) 0%, rgba(157, 139, 115, 0.15) 100%);
             border-bottom: 1px solid var(--border);
         }
         
@@ -242,6 +247,11 @@
             font-size: 1.4rem;
             transition: transform 0.2s;
             cursor: pointer;
+            color: white;
+        }
+        
+        body.light-mode .favorite-btn {
+            color: #1a1a1a;
         }
         
         .favorite-btn:hover {
@@ -255,7 +265,7 @@
         }
         
         .badge-new {
-            background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+            background: linear-gradient(135deg, #8a7a65 0%, #6d5f4d 100%);
             padding: 4px 10px;
             border-radius: 15px;
             font-size: 0.7rem;
@@ -265,7 +275,7 @@
         }
         
         .tool-tier {
-            background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+            background: linear-gradient(135deg, #8a7a65 0%, #6d5f4d 100%);
             padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.75rem;
@@ -275,7 +285,8 @@
         }
         
         .tool-tier.tier-2 {
-            background: linear-gradient(135deg, #c9b896 0%, #a89968 100%);
+            background: linear-gradient(135deg, #9d9d9d 0%, #7a7a7a 100%);
+            color: white;
         }
         
         .tool-meta-section {
@@ -326,11 +337,55 @@
             font-weight: 500;
         }
         
-        .tag-eu { background: rgba(0, 51, 153, 0.3); color: #7eb3ff; }
-        .tag-gdpr { background: rgba(46, 204, 113, 0.3); color: #7ee8a8; }
-        .tag-risk-minimal { background: rgba(46, 204, 113, 0.3); color: #7ee8a8; }
-        .tag-risk-limited { background: rgba(241, 196, 15, 0.3); color: #f7dc6f; }
-        .tag-risk-high { background: rgba(231, 76, 60, 0.3); color: #f1948a; }
+        .tag-eu { 
+            background: rgba(138, 122, 101, 0.25); 
+            color: #c4b5a0; 
+        }
+        
+        .tag-gdpr { 
+            background: rgba(196, 181, 160, 0.25); 
+            color: #d4c4ad; 
+        }
+        
+        .tag-risk-minimal { 
+            background: rgba(80, 122, 138, 0.25); 
+            color: #7da8b8; 
+        }
+        
+        .tag-risk-limited { 
+            background: rgba(138, 122, 101, 0.3); 
+            color: #c4b5a0; 
+        }
+        
+        .tag-risk-high { 
+            background: rgba(106, 106, 106, 0.3); 
+            color: #a0a0a0; 
+        }
+        
+        body.light-mode .tag-eu {
+            background: rgba(138, 122, 101, 0.2);
+            color: #6d5f4d;
+        }
+        
+        body.light-mode .tag-gdpr {
+            background: rgba(196, 181, 160, 0.2);
+            color: #8a7a65;
+        }
+        
+        body.light-mode .tag-risk-minimal {
+            background: rgba(80, 122, 138, 0.2);
+            color: #4a7a8a;
+        }
+        
+        body.light-mode .tag-risk-limited {
+            background: rgba(138, 122, 101, 0.25);
+            color: #6d5f4d;
+        }
+        
+        body.light-mode .tag-risk-high {
+            background: rgba(66, 66, 66, 0.25);
+            color: #4a4a4a;
+        }
         
         .tool-main-info {
             padding: 20px;
@@ -373,7 +428,7 @@
         }
         
         .details-toggle {
-            background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+            background: linear-gradient(135deg, #8a7a65 0%, #6d5f4d 100%);
             color: white;
             border: none;
             padding: 12px 20px;
@@ -398,7 +453,7 @@
             display: none;
             margin-bottom: 15px;
             padding: 20px;
-            background: rgba(212, 165, 116, 0.08);
+            background: rgba(196, 181, 160, 0.08);
             border-radius: 10px;
             border-left: 3px solid var(--accent);
         }
@@ -433,13 +488,23 @@
         }
         
         .pros {
-            background: rgba(46, 204, 113, 0.1);
-            border-left: 3px solid var(--success);
+            background: rgba(196, 181, 160, 0.15);
+            border-left: 3px solid #c4b5a0;
         }
         
         .cons {
-            background: rgba(231, 76, 60, 0.1);
-            border-left: 3px solid var(--danger);
+            background: rgba(90, 90, 90, 0.15);
+            border-left: 3px solid #808080;
+        }
+        
+        body.light-mode .pros {
+            background: rgba(138, 122, 101, 0.12);
+            border-left: 3px solid #8a7a65;
+        }
+        
+        body.light-mode .cons {
+            background: rgba(100, 100, 100, 0.12);
+            border-left: 3px solid #666666;
         }
         
         .pros h5, .cons h5 {
@@ -468,18 +533,18 @@
         }
         
         .alternative-tag {
-            background: rgba(212, 165, 116, 0.2);
+            background: rgba(196, 181, 160, 0.2);
             padding: 6px 14px;
             border-radius: 15px;
             font-size: 0.85rem;
             color: var(--accent);
             cursor: pointer;
             transition: all 0.2s;
-            border: 1px solid rgba(212, 165, 116, 0.3);
+            border: 1px solid rgba(196, 181, 160, 0.3);
         }
         
         .alternative-tag:hover {
-            background: rgba(212, 165, 116, 0.3);
+            background: rgba(196, 181, 160, 0.3);
             transform: translateY(-2px);
         }
         
@@ -487,7 +552,7 @@
             display: none;
             margin-bottom: 15px;
             padding: 20px;
-            background: rgba(168, 153, 104, 0.08);
+            background: rgba(138, 138, 138, 0.08);
             border-radius: 10px;
             border-left: 3px solid var(--success);
         }
@@ -521,8 +586,8 @@
         
         .tool-link-btn {
             display: block;
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-            color: white;
+            background: white;
+            color: #1a1a1a;
             text-decoration: none;
             padding: 14px 20px;
             border-radius: 8px;
@@ -530,11 +595,22 @@
             font-weight: 600;
             margin: 0 20px 20px 20px;
             transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        body.light-mode .tool-link-btn {
+            background: #1a1a1a;
+            color: white;
+            border: 2px solid #1a1a1a;
         }
         
         .tool-link-btn:hover {
-            opacity: 0.9;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+        }
+        
+        body.light-mode .tool-link-btn:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         
         .modal {
@@ -635,7 +711,7 @@
         
         .glossar-term {
             font-weight: bold;
-            color: #d4a574;
+            color: #c4b5a0;
             font-size: 1.1rem;
             margin-bottom: 8px;
         }
@@ -803,7 +879,7 @@ const tools = [
         aiActRisk: "limited",
         tags: ["🛡️ DSGVO-konform", "🤖 AI Act GPAI"],
         url: "https://chat.openai.com",
-        description: "Der bekannteste KI-Chatbot basierend auf GPT-4. Textgenerierung, Code, Analyse, Web-Suche und Bildgenerierung.",
+        description: "Der bekannteste KI-Chatbot basierend auf GPT-5. Textgenerierung, Code, Analyse, Web-Suche und Bildgenerierung.",
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "KI-Assistent",
         kurzbeschreibung: "Universeller KI-Chatbot für Text, Code, Bilder und Websuche. Multimodal einsetzbar.",
@@ -815,7 +891,7 @@ const tools = [
             "Multimodal: Text, Bild, Code, Web-Suche",
             "App-Ökosystem mit Spotify, Canva, Uber",
             "Sehr gute Code-Generierung",
-            "ChatGPT Plus mit GPT-4 Zugang"
+            "ChatGPT Plus mit GPT-5 Zugang"
         ],
         cons: [
             "App-Integration in EU nicht verfügbar",
@@ -823,7 +899,7 @@ const tools = [
             "Datenschutzbedenken bei US-Servern",
             "Manchmal überlastet zu Stoßzeiten"
         ],
-        zusatzinfo: "ChatGPT erreichte Ende 2024 über 300 Millionen wöchentliche Nutzer und hat mit GPT-4 einen weiteren Qualitätssprung gemacht. Die Integration von PayPal ermöglicht nun Shopping direkt im Chatbot. OpenAI hat mit den Dev Days 2025 ein App-Ökosystem angekündigt, das ChatGPT zur zentralen Plattform für digitale Dienste machen soll. Spotify, Canva und Uber sind bereits als Partner dabei. In der EU ist die App-Integration jedoch noch nicht verfügbar. Das Modell GPT-4 bietet verbesserte Coding-Fähigkeiten und reduzierte Halluzinationen.",
+        zusatzinfo: "ChatGPT erreichte Ende 2024 über 300 Millionen wöchentliche Nutzer und hat mit GPT-5 (August 2025) einen weiteren Qualitätssprung gemacht. GPT-5 ist nun das Standard-Modell für alle Nutzer mit adaptivem Verhalten je nach Anfragekomplexität. Die Integration von PayPal ermöglicht Shopping direkt im Chatbot. OpenAI hat mit den Dev Days 2025 ein App-Ökosystem angekündigt. Spotify, Canva und Uber sind bereits als Partner dabei. In der EU ist die App-Integration jedoch noch nicht verfügbar.",
         quelle: "heise.de (News zu ChatGPT, Oktober 2025)",
         quelleUrl: "https://www.heise.de/thema/ChatGPT"
     },
@@ -843,7 +919,7 @@ const tools = [
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "KI-Assistent",
         kurzbeschreibung: "KI mit 200K Token Kontext, spezialisiert auf Coding und sicheres Arbeiten. Constitutional AI.",
-        priceDetails: "Free: Basis | Pro: 20$/Monat (Opus 4.5 inkl.) | Team: 30$/User/Monat | API: Pay-as-you-go",
+        priceDetails: "Free: Basis | Pro: 20$/Monat | Max: 100$/Monat | Team: 30$/User/Monat | API: Pay-as-you-go",
         useCases: ["Entwickler", "Forscher", "Content-Writer", "Datenanalysten", "Excel-Nutzer"],
         alternatives: ["chatgpt", "gemini", "perplexity"],
         pros: [
@@ -851,7 +927,7 @@ const tools = [
             "Beste Coding-Performance (Opus 4.5)",
             "Constitutional AI - sehr sicher",
             "Excel Add-in verfügbar",
-            "Hohe Bewertung: 350 Mrd. Dollar"
+            "Bewertung: 61,5 Mrd. Dollar (2025)"
         ],
         cons: [
             "Teurer als ChatGPT für Heavy Users",
@@ -879,21 +955,22 @@ const tools = [
         location: "🇺🇸 Mountain View, Kalifornien, USA",
         kategorie: "KI-Assistent",
         kurzbeschreibung: "Multimodales LLM von Google. Native Integration in Workspace, Android und Suche.",
-        priceDetails: "Free: Basis | One AI Premium: 21,99€/Monat (inkl. 2TB Google One) | Business/Enterprise: Custom",
+        priceDetails: "Free: Basis | Google AI Pro: 19,99$/Monat (inkl. 2TB Storage, NotebookLM Plus) | Google AI Ultra: 249,99$/Monat (30TB, höchste Limits)",
         useCases: ["Google Workspace Nutzer", "Android-User", "Multimodale Aufgaben", "Unternehmen"],
         alternatives: ["chatgpt", "claude", "perplexity"],
         pros: [
             "Native Multimodalität (Text, Bild, Audio, Video)",
             "Tiefe Google-Integration (Workspace, Android)",
             "75 Mrd. Dollar KI-Investment 2025",
-            "Vertex AI für Enterprise"
+            "Vertex AI für Enterprise",
+            "NotebookLM Plus inklusive bei AI Pro"
         ],
         cons: [
             "Weniger Community-Support als GPT",
             "Manchmal inkonsistent bei komplexen Tasks",
             "Datenschutzbedenken wg. Google-Integration"
         ],
-        zusatzinfo: "Gemini 2.5 Pro und Flash sind Googles aktuelle Spitzenmodelle mit nativer Multimodalität. Das Modell ist tief in Google Workspace, Android und die Google-Suche integriert. Google investiert 2025 rund 75 Milliarden Dollar in KI-Entwicklung. Gemini kann komplexe Reasoning-Aufgaben lösen und ist über Vertex AI für Unternehmen verfügbar. Die Umbenennung von Bard zu Gemini erfolgte im Februar 2024.",
+        zusatzinfo: "Gemini 2.5 Pro und Flash sind Googles aktuelle Spitzenmodelle mit nativer Multimodalität. Im Mai 2025 wurde 'Google One AI Premium' zu 'Google AI Pro' umbenannt. Der neue Top-Tier 'Google AI Ultra' ($249.99/Mo) bietet höchste Limits und 30TB Storage. Das Modell ist tief in Google Workspace, Android und die Google-Suche integriert. Google investiert 2025 rund 75 Milliarden Dollar in KI-Entwicklung. Gemini kann komplexe Reasoning-Aufgaben lösen und ist über Vertex AI für Unternehmen verfügbar.",
         quelle: "Google AI Dokumentation",
         quelleUrl: "https://ai.google.dev/"
     },
@@ -909,29 +986,29 @@ const tools = [
         aiActRisk: "minimal",
         tags: ["🇪🇺 EU-Anbieter", "🇩🇪 Deutschland", "🛡️ DSGVO-konform", "📖 Open Source"],
         url: "https://bfl.ai/flux2",
-        description: "Deutsche KI-Bildgenerierung. Open-Source-Modelle und API für professionelle Anwendungen.",
+        description: "Deutsche KI-Bildgenerierung. FLUX.2 (Nov 2025): Multi-Reference, 4MP, Text-Rendering.",
         location: "🇩🇪 Freiburg, Baden-Württemberg, Deutschland",
         kategorie: "Bildgenerierung",
-        kurzbeschreibung: "Made in Germany Bildgenerator mit bis zu 4 Megapixel Auflösung und 10 Referenzbildern.",
-        priceDetails: "Free: Flux.1 [schnell] Open Source | Pro: 10$/Monat | API: Pay-per-Image",
-        useCases: ["Designer", "Marketing-Teams", "Content-Creator", "Telekom", "Adobe/Canva-Nutzer"],
+        kurzbeschreibung: "Made in Germany. FLUX.2 mit Multi-Reference (bis 10 Bilder), 4 Megapixel, besseres Text-Rendering.",
+        priceDetails: "FLUX.2 [dev]: Open Weight (Lizenz erforderlich) | [pro]: API Pay-per-Image | [klein]: Apache 2.0 (coming soon)",
+        useCases: ["Designer", "Marketing-Teams", "Content-Creator", "Adobe/Canva/Netflix", "Grok-Partner"],
         alternatives: ["midjourney", "dalle", "stablediffusion"],
         pros: [
             "Made in Germany - DSGVO-konform",
             "Bis 4 Megapixel Auflösung",
             "10 Referenzbilder für konsistente Charaktere",
-            "Open Source (Apache 2.0)",
-            "86% Marktanteil kommerziell",
-            "Kunden: Adobe, Canva, Netflix, Telekom"
+            "FLUX.2 VAE unter Apache 2.0",
+            "Bewertung: $3.25 Mrd. (Dez 2025)",
+            "Kunden: Adobe, Canva, Netflix, Grok, NVIDIA"
         ],
         cons: [
-            "Teurer als Midjourney bei hohem Volumen",
-            "Weniger Community als Stable Diffusion",
-            "UI nicht so poliert wie Midjourney"
+            "[dev] benötigt kommerzielle Lizenz",
+            "[pro]/[flex] nicht Open Source",
+            "Community kleiner als Stable Diffusion"
         ],
-        zusatzinfo: "Black Forest Labs wurde von ehemaligen Stability.AI-Entwicklern gegründet, die zuvor an Stable Diffusion arbeiteten. Das Freiburger Startup hat mit Flux 2 eine neue Modellfamilie veröffentlicht, die Bilder bis 4 Megapixel generiert und bis zu 10 Referenzbilder für konsistente Charaktere unterstützt. Die Deutsche Telekom nutzt Flux für Marketing-Bilder und lobte die 'Made in Germany'-Qualität. Flux.1 [schnell] ist unter Apache 2.0-Lizenz Open Source. Das Startup hat 86% des kommerziellen Marktes für Bildgenerierung erobert.",
-        quelle: "heise.de (November 2025)",
-        quelleUrl: "https://www.heise.de/news/FLUX-2-Bild-KI-Modell-mit-besserer-Textdarstellung-und-Weltwissen-11093413.html"
+        zusatzinfo: "Black Forest Labs wurde von ehemaligen Stability.AI-Entwicklern gegründet. FLUX.2 wurde am 25. November 2025 veröffentlicht mit Multi-Reference Conditioning (bis 10 Bilder), verbessertem Text-Rendering und 4MP Auflösung. Die Serie umfasst: [pro] (beste Qualität), [flex] (volle Kontrolle), [dev] (Open Weight, kommerziell lizenzpflichtig), [klein] (Apache 2.0, coming soon). Dezember 2025: $300M Series B bei $3.25 Mrd. Bewertung. Investoren: Salesforce, a16z, NVIDIA, Canva, Figma.",
+        quelle: "Black Forest Labs (November 2025)",
+        quelleUrl: "https://bfl.ai/blog/flux-2"
     },
     {
         id: "midjourney",
@@ -1132,7 +1209,7 @@ const tools = [
             "Autonome Aufgabenausführung ohne ständige Anleitung",
             "Übertraf GPT-4 auf GAIA-Benchmark",
             "Multi-Agenten-System",
-            "Claude 3.7 Sonnet + Alibaba Qwen",
+            "Nutzt Claude Sonnet + Alibaba Qwen",
             "März 2025 viral gegangen"
         ],
         cons: [
@@ -1141,7 +1218,7 @@ const tools = [
             "Weniger Community-Support",
             "Dokumentation noch ausbaufähig"
         ],
-        zusatzinfo: "Manus AI ist ein autonomer KI-Agent, der im März 2025 viral ging und auf dem GAIA-Benchmark GPT-4 übertraf. Anders als Chatbots führt Manus Aufgaben selbstständig aus: Research, Datenanalyse, Website-Erstellung, Reports und mehr - ohne ständige Anleitung. Das Multi-Agenten-System arbeitet im Hintergrund und liefert fertige Ergebnisse. Manus nutzt Claude 3.7 Sonnet und Alibaba Qwen. Entwickelt von Monica.im mit Sitz in Singapur.",
+        zusatzinfo: "Manus AI ist ein autonomer KI-Agent, der im März 2025 viral ging und auf dem GAIA-Benchmark GPT-4 übertraf. Anders als Chatbots führt Manus Aufgaben selbstständig aus: Research, Datenanalyse, Website-Erstellung, Reports und mehr - ohne ständige Anleitung. Das Multi-Agenten-System arbeitet im Hintergrund und liefert fertige Ergebnisse. Manus nutzt verschiedene LLMs inkl. Claude Sonnet und Alibaba Qwen. Entwickelt von Monica.im mit Sitz in Singapur. Für EU-Nutzer: Datenschutzbedenken durch China-Verbindung beachten.",
         quelle: "TechCrunch, heise.de",
         quelleUrl: "https://manus.im"
     },
@@ -1196,14 +1273,14 @@ const tools = [
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "KI-Suchmaschine",
         kurzbeschreibung: "Answer Engine mit Echtzeit-Websuche. Quellenbasierte Antworten mit Citations.",
-        priceDetails: "Free: Basis mit Limits | Pro: 20$/Monat (unbegrenzt, GPT-4 & Claude)",
+        priceDetails: "Free: Basis mit Limits (5 Pro-Suchen/Tag) | Pro: 20$/Monat | Max: 200$/Monat | Enterprise: 40$/User/Monat",
         useCases: ["Journalisten", "Forscher", "Wissensarbeiter", "Studenten"],
         alternatives: ["chatgpt", "gemini", "claude"],
         pros: [
             "Echtzeit-Websuche integriert",
             "Alle Antworten mit Quellen",
             "Eigenes Sonar-Modell für Research",
-            "Pro: Zugang zu GPT-4 & Claude",
+            "Pro: Zugang zu GPT-4.1 & Claude 4 Sonnet",
             "Alternative zu Google-Suche"
         ],
         cons: [
@@ -1211,7 +1288,7 @@ const tools = [
             "Manchmal langsamer als reine LLMs",
             "Kleinere Community"
         ],
-        zusatzinfo: "Perplexity hat sich als führende 'Answer Engine' etabliert und kombiniert die Stärken von Suchmaschinen mit LLM-Fähigkeiten. Das eigene Sonar-Modell basiert auf Llama und wurde speziell für Recherche optimiert. Besonders beliebt bei Journalisten, Forschern und Wissensarbeitern. Die Pro-Version bietet unbegrenzte Suchen und Zugang zu GPT-4 und Claude.",
+        zusatzinfo: "Perplexity hat sich als führende 'Answer Engine' etabliert und kombiniert die Stärken von Suchmaschinen mit LLM-Fähigkeiten. Das eigene Sonar-Modell basiert auf Llama und wurde speziell für Recherche optimiert. 2025 wurde der Max-Tier ($200/Mo) mit unbegrenztem Labs-Zugang eingeführt. Besonders beliebt bei Journalisten, Forschern und Wissensarbeitern. Education Pro für Studenten: nur $4.99/Mo.",
         quelle: "the-decoder.de, Perplexity Docs",
         quelleUrl: "https://www.perplexity.ai"
     },
@@ -1231,22 +1308,22 @@ const tools = [
         location: "🇨🇳 Hangzhou, China",
         kategorie: "KI-Assistent",
         kurzbeschreibung: "Kosteneffizientes Open-Source LLM aus China. Bruchteil der GPT-4 Trainingskosten.",
-        priceDetails: "Free: Chat-Zugang | API: Pay-per-Token (sehr günstig) | Self-Hosted: Kostenlos",
+        priceDetails: "Free: Chat komplett kostenlos | API: $0.028/MTok (Cache Hit), $0.28/MTok (Cache Miss), $0.42/MTok (Output)",
         useCases: ["Entwickler", "Startups", "Cost-Sensitive Projekte", "Coding"],
         alternatives: ["llama", "mistral", "claude"],
         pros: [
             "Bruchteil der GPT-4 Trainingskosten",
             "Open Source - lokal nutzbar",
             "Stark in Coding & Math",
-            "Sehr niedrige Betriebskosten",
-            "DeepSeek-V3 verfügbar"
+            "API 10-30x günstiger als OpenAI",
+            "DeepSeek-V3.2-Exp verfügbar (Sept 2025)"
         ],
         cons: [
             "China-basiert - Datenschutzbedenken",
             "Kleinere Community außerhalb China",
             "Dokumentation teilweise auf Chinesisch"
         ],
-        zusatzinfo: "DeepSeek hat Anfang 2025 für Aufsehen gesorgt, als das Modell mit einem Bruchteil der Trainingskosten von GPT-4 vergleichbare Leistung erreichte. Das löste einen regelrechten KI-Boom aus und trieb die Finanzierungsrunde von Anthropic an. DeepSeek-V3 ist Open Source und kann lokal betrieben werden. Das Modell ist besonders stark im Coding und mathematischen Reasoning.",
+        zusatzinfo: "DeepSeek hat Anfang 2025 für Aufsehen gesorgt, als das Modell mit einem Bruchteil der Trainingskosten von GPT-4 vergleichbare Leistung erreichte. Im September 2025 wurde DeepSeek-V3.2-Exp veröffentlicht mit 50% niedrigeren API-Kosten. Das Modell nutzt DeepSeek Sparse Attention (DSA) für effizientere Inferenz. DeepSeek ist Open Source (MIT-Lizenz) und kann lokal betrieben werden. Besonders stark in Coding und mathematischem Reasoning.",
         quelle: "heise.de (Februar 2025)",
         quelleUrl: "https://www.heise.de/news/Claude-Entwickler-Anthropic-bekommt-ueber-3-Milliarden-US-Dollar-an-Finanzierung-10295380.html"
     },
@@ -1262,28 +1339,29 @@ const tools = [
         aiActRisk: "limited",
         tags: ["📖 Open Source"],
         url: "https://llama.meta.com",
-        description: "Metas Open-Weight-Modelle. Basis für viele Open-Source-Projekte und lokale KI-Anwendungen.",
+        description: "Metas Open-Weight-Modelle (April 2025). Scout, Maverick und Behemoth - multimodal und multilingual.",
         location: "🇺🇸 Menlo Park, Kalifornien, USA",
         kategorie: "KI-Assistent",
-        kurzbeschreibung: "Open-Weight LLM von Meta. Basis für unzählige Fine-Tunes und lokale Deployments.",
-        priceDetails: "Komplett kostenlos - Open Weight License | Self-Hosting: Hardware-abhängig",
+        kurzbeschreibung: "Open-Weight MoE-Modelle von Meta. Scout (17B/16 Experts), Maverick (17B/128 Experts), Behemoth (288B).",
+        priceDetails: "Komplett kostenlos - Open Weight License | Self-Hosting: Hardware-abhängig | >700M User: Lizenz erforderlich",
         useCases: ["Entwickler", "Forscher", "Lokale Deployments", "Fine-Tuning"],
         alternatives: ["mistral", "deepseek", "ollama"],
         pros: [
-            "Komplett Open Weight",
-            "Verschiedene Größen verfügbar",
-            "Basis für viele Fine-Tunes",
-            "Meta's LlamaCon Konferenz",
+            "Komplett Open Weight (MIT-ähnlich)",
+            "Scout passt auf 1x H100 GPU",
+            "Nativ multimodal (Text, Bild, Video)",
+            "10M Token Kontextfenster (Scout)",
             "Von Perplexity, Together AI genutzt"
         ],
         cons: [
-            "Keine offizielle UI",
+            "⚠️ EU-Nutzung eingeschränkt (Lizenz)",
             "Self-Hosting erforderlich",
-            "Hardware-intensiv für größere Modelle"
+            "Hardware-intensiv für Maverick/Behemoth",
+            "Behemoth noch nicht released"
         ],
-        zusatzinfo: "Llama 4 ist die neueste Generation von Metas Open-Weight-Modellen und bildet die Grundlage für zahlreiche Open-Source-Projekte. Die Modelle können lokal betrieben werden und sind in verschiedenen Größen verfügbar. Llama ist die Basis für viele Fine-Tuned-Modelle und wird von Perplexity, Together AI und anderen Anbietern genutzt. Meta hat mit der LlamaCon 2025 eine eigene Entwicklerkonferenz gestartet.",
-        quelle: "Meta AI Blog, the-decoder.de",
-        quelleUrl: "https://llama.meta.com"
+        zusatzinfo: "Llama 4 wurde am 5. April 2025 released und ist Metas erstes Mixture-of-Experts (MoE) Modell. Scout (17B aktive Parameter, 109B total) bietet 10M Token Kontext. Maverick (17B aktive, 400B total) konkurriert mit GPT-4o. Behemoth (288B aktive, ~2T total) ist noch in Training. WICHTIG: Die Llama-Lizenz schließt Nutzer mit Hauptsitz in der EU aus - für EU-Unternehmen problematisch!",
+        quelle: "Meta AI Blog (April 2025)",
+        quelleUrl: "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
     },
     {
         id: "notebooklm",
@@ -1291,7 +1369,7 @@ const tools = [
         company: "Google (Mountain View, USA)",
         category: "ki-assistenten",
         region: "usa",
-        pricing: "kostenlos",
+        pricing: "freemium",
         tier: 1,
         isNew: false,
         aiActRisk: "minimal",
@@ -1300,25 +1378,26 @@ const tools = [
         description: "KI-gestütztes Notizbuch für Recherche. Analysiert eigene Dokumente und erstellt Zusammenfassungen.",
         location: "🇺🇸 Mountain View, Kalifornien, USA",
         kategorie: "Research-Assistent",
-        kurzbeschreibung: "KI-Notizbuch für Wissensarbeit. Analysiert Dokumente, erstellt Podcasts aus PDFs.",
-        priceDetails: "Komplett kostenlos",
+        kurzbeschreibung: "KI-Notizbuch für Wissensarbeit. Analysiert Dokumente, erstellt Podcasts aus PDFs. Interaktive Audio Overviews.",
+        priceDetails: "Free: 100 Notebooks, 3 Audio Overviews/Tag | Plus: 500 Notebooks, 20 Audios/Tag (via Google AI Pro: 19,99$/Mo)",
         useCases: ["Studierende", "Forscher", "Journalisten", "Autoren"],
         alternatives: ["perplexity", "chatgpt", "claude"],
         pros: [
-            "Komplett kostenlos",
+            "Free-Tier sehr großzügig",
             "Analysiert eigene Dokumente",
             "Audio-Podcast-Generierung aus Texten",
-            "Q&A zu hochgeladenen Inhalten",
-            "Basiert auf Gemini"
+            "NEU: Interaktive Audio Overviews ('Join')",
+            "Basiert auf Gemini 2.0"
         ],
         cons: [
             "Nur auf eigene Dokumente beschränkt",
             "Keine API",
-            "US-basiert"
+            "US-basiert",
+            "Plus nur via Google AI Pro Abo"
         ],
-        zusatzinfo: "NotebookLM ist Googles innovatives Tool für Wissensarbeit. Es kann eigene Dokumente, PDFs und Webseiten analysieren und daraus Zusammenfassungen, Q&A-Sessions und sogar Audio-Podcasts generieren. Besonders beliebt bei Studierenden, Forschern und Journalisten. Das Tool basiert auf Gemini und ist komplett kostenlos nutzbar. Die Audio-Funktion erstellt automatisch Podcast-artige Diskussionen über hochgeladene Inhalte.",
-        quelle: "Google AI Blog",
-        quelleUrl: "https://notebooklm.google.com"
+        zusatzinfo: "NotebookLM ist Googles innovatives Tool für Wissensarbeit. Es kann eigene Dokumente, PDFs und Webseiten analysieren und daraus Zusammenfassungen, Q&A-Sessions und Audio-Podcasts generieren. Dezember 2024: 'Join'-Feature für interaktive Audio Overviews. Februar 2025: NotebookLM Plus wurde Teil von Google AI Pro ($19.99/Mo). Free: 100 Notebooks, 50 Sources/Notebook, 3 Audio Overviews/Tag. Plus: 500 Notebooks, 300 Sources, 20 Audios/Tag.",
+        quelle: "Google AI Blog (Dezember 2024)",
+        quelleUrl: "https://blog.google/technology/google-labs/notebooklm-new-features-december-2024/"
     },
     {
         id: "mistral",
@@ -1720,7 +1799,7 @@ const tools = [
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "LLM-Framework",
         kurzbeschreibung: "De-facto-Standard für LLM-Apps. RAG, Agents, Chains, Memory.",
-        priceDetails: "Open Source: Kostenlos | LangSmith (Monitoring): ab 39$/Mon | LangServe (Deploy): ab 79$/Mon",
+        priceDetails: "Open Source: Kostenlos | LangSmith Developer: Free (5k Traces) | Plus: 39$/User/Mon | Enterprise: Custom",
         useCases: ["Entwickler", "RAG-Projekte", "KI-Agenten", "Chatbots"],
         alternatives: ["llamaindex", "haystack", "semantic-kernel"],
         pros: [
@@ -2279,27 +2358,27 @@ const tools = [
         aiActRisk: "minimal",
         tags: [],
         url: "https://runwayml.com",
-        description: "Führende Video-KI-Plattform. Text-to-Video, Bild-to-Video und Video-Editing.",
+        description: "Führende Video-KI-Plattform. Gen-4.5 (Dez 2025) #1 auf Video Arena Benchmark.",
         location: "🇺🇸 New York, USA",
         kategorie: "Videogenerierung",
-        kurzbeschreibung: "Marktführer Video-KI. Gen-3, Oscar-prämierte Effekte, AI Magic Tools.",
-        priceDetails: "Free: 125 Credits | Standard: 12$/Mon | Pro: 28$/Mon | Unlimited: 76$/Mon | Enterprise: Custom",
+        kurzbeschreibung: "Marktführer Video-KI. Gen-4.5 übertrifft Google & OpenAI. AI Magic Tools, Workflows.",
+        priceDetails: "Free: 125 Credits | Standard: 12$/Mon (625 Cr.) | Pro: 28$/Mon (2250 Cr.) | Unlimited: 76$/Mon",
         useCases: ["Filmproduktion", "Content-Creator", "VFX", "Marketing-Videos"],
         alternatives: ["pika", "kling", "sora"],
         pros: [
-            "Gen-3 state-of-the-art",
+            "Gen-4.5 #1 auf Video Arena Benchmark (Dez 2025)",
             "Oscar-prämierte Effekte ('Everything Everywhere All at Once')",
             "AI Magic Tools (Green Screen, Motion Tracking)",
-            "Gen-4 angekündigt",
+            "Workflows: Node-basierte Multi-Modell-Chains",
             "Hollywood & Creator nutzen es"
         ],
         cons: [
             "Teuer bei hohem Volumen",
-            "Credits-System kompliziert",
+            "Credits-System: 52s Gen-4 = 625 Credits",
             "Rendering kann langsam sein"
         ],
-        zusatzinfo: "Runway ist die führende Plattform für KI-Video-Generierung und wurde für die Oscar-prämierten Effekte in 'Everything Everywhere All at Once' genutzt. Gen-2 und Gen-3 ermöglichen Text-to-Video und Bild-to-Video mit beeindruckender Qualität. Die Plattform bietet auch AI Magic Tools für Video-Editing: Green Screen, Motion Tracking, Inpainting. Gen-4 wurde angekündigt und soll das Character-Consistency-Problem lösen.",
-        quelle: "runwayml.com",
+        zusatzinfo: "Runway ist die führende Plattform für KI-Video-Generierung. Gen-4.5 wurde am 1. Dezember 2025 veröffentlicht und hält Platz 1 auf dem Video Arena Benchmark - übertrifft Google und OpenAI. Features: Text-to-Video, Bild-to-Video, Act-Two (Voice+Expression Mapping), Aleph (interaktive Welten). Credits: 625 = ca. 52s Gen-4 oder 125s Gen-4 Turbo. Partner: Lionsgate, AMC Networks.",
+        quelle: "CNBC (Dezember 2025)",
         quelleUrl: "https://runwayml.com"
     },
     {
@@ -2314,26 +2393,26 @@ const tools = [
         aiActRisk: "minimal",
         tags: [],
         url: "https://pika.art",
-        description: "Video-Generator für Social Content. Text-to-Video und Bild-to-Video.",
+        description: "Video-Generator für Social Content. Pika 2.5 mit Pikaffects, Pikaswaps, Pikadditions.",
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "Videogenerierung",
-        kurzbeschreibung: "Spezialisiert auf kurze Social-Videos. TikTok/Instagram-Creator lieben es.",
-        priceDetails: "Free: Begrenzte Credits | Standard: 8$/Mon | Unlimited: 28$/Mon | Pro: 58$/Mon",
+        kurzbeschreibung: "Spezialisiert auf kurze Social-Videos. Pika 2.5 mit kreativen Effekten (Pikaffects).",
+        priceDetails: "Free: 80 Credits (480p) | Standard: 8$/Mon (700 Cr.) | Pro: 28$/Mon (2300 Cr.) | Fancy: 76$/Mon (6000 Cr.)",
         useCases: ["TikTok-Creator", "Instagram", "Social Media", "Virale Clips"],
         alternatives: ["runway", "kling", "capcut"],
         pros: [
-            "Pika 2.0 verbesserte Qualität",
-            "Spezialisiert auf Social-Formate",
-            "Lip Sync Feature",
-            "Modify Region für gezielte Änderungen",
-            "Schnelle Generierung"
+            "Pika 2.5 mit verbesserter Qualität",
+            "Pikaffects: 27 kreative Transformationen",
+            "Pikaswaps: Objekte austauschen",
+            "Pikadditions: Elemente hinzufügen",
+            "Günstigster Einstieg ($8/Mon)"
         ],
         cons: [
+            "Free nur 480p",
             "Kürzere Videos als Runway",
-            "Weniger professionell",
-            "Credits schnell aufgebraucht"
+            "Credits verfallen monatlich"
         ],
-        zusatzinfo: "Pika 2.0 hat sich auf kurze, virale Video-Formate spezialisiert und ist besonders bei TikTok- und Instagram-Creatorn beliebt. Die Plattform bietet eine intuitive Oberfläche und schnelle Generierung. Features wie 'Lip Sync' und 'Modify Region' ermöglichen gezielte Anpassungen. Die kostenlose Version bietet begrenzte Credits pro Tag.",
+        zusatzinfo: "Pika 2.5 ist die neueste Version mit verbesserter Bewegungsqualität und Kamerakontrolle. Kreative Tools: Pikaffects (27 Transformationen wie Cartoon, VHS, Fashion), Pikaswaps (Objekte ersetzen), Pikadditions (Elemente hinzufügen), Pikatwists (Stil ändern). Besonders beliebt für TikTok/Instagram Reels. Credit-Verbrauch: 5s 720p = ca. 6 Credits auf Model 2.2.",
         quelle: "pika.art",
         quelleUrl: "https://pika.art"
     },
@@ -2349,26 +2428,26 @@ const tools = [
         aiActRisk: "minimal",
         tags: [],
         url: "https://app.klingai.com/global/",
-        description: "Video-Generator aus China. Lange Videos und beeindruckende Qualität.",
+        description: "Video-Generator aus China. Kling 2.5 mit langen Videos und beeindruckender Physik.",
         location: "🇨🇳 China",
         kategorie: "Videogenerierung",
-        kurzbeschreibung: "Bis 2 Minuten Videos. Beeindruckende physikalische Kohärenz.",
-        priceDetails: "Free: Begrenzt | Standard: Variable | Pro: Variable (Credits-basiert)",
+        kurzbeschreibung: "Bis 2 Minuten Videos. Kling 2.5 mit beeindruckender physikalischer Kohärenz.",
+        priceDetails: "Free: 66 Credits/Tag | Standard: ~10$/Mon | Pro: ~30$/Mon (Credits-basiert)",
         useCases: ["Lange Videos", "Physik-akkurate Szenen", "Komplexe Bewegungen"],
         alternatives: ["runway", "pika", "sora"],
         pros: [
-            "Videos bis 2 Minuten",
+            "Videos bis 2 Minuten Länge",
             "Beeindruckende physikalische Kohärenz",
             "Versteht komplexe Bewegungen",
-            "Kling 2.5 verbessert",
-            "Global über app.klingai.com"
+            "Kling 2.5 mit verbesserter Qualität",
+            "Auch via OpenArt zugänglich"
         ],
         cons: [
-            "China-basiert - Datenschutzbedenken",
+            "China-basiert - Datenschutzbedenken für EU",
             "UI manchmal auf Chinesisch",
-            "Credits-System unklar"
+            "Credits-System variabel"
         ],
-        zusatzinfo: "Kling AI von Kuaishou überraschte 2024 mit Videos bis zu 2 Minuten Länge und beeindruckender physikalischer Kohärenz. Das Modell versteht komplexe Bewegungen und Physik besser als viele Konkurrenten. Die globale Version ist über app.klingai.com zugänglich. Kling 2.5 bietet verbesserte Qualität und wird auch über OpenArt zugänglich gemacht.",
+        zusatzinfo: "Kling AI von Kuaishou überraschte mit Videos bis zu 2 Minuten Länge und beeindruckender physikalischer Kohärenz. Kling 2.5 bietet verbesserte Qualität und ist global über app.klingai.com zugänglich. Das Modell versteht komplexe Bewegungen und Physik besser als viele Konkurrenten. Auch über OpenArt und andere Plattformen nutzbar. Für EU-Nutzer: Datenschutzbedenken beachten.",
         quelle: "the-decoder.de",
         quelleUrl: "https://app.klingai.com/global/"
     },
@@ -2384,29 +2463,29 @@ const tools = [
         aiActRisk: "minimal",
         tags: [],
         url: "https://openai.com/sora",
-        description: "OpenAIs Video-Generator. Physikalisch kohärente Videos bis zu einer Minute.",
+        description: "OpenAIs Video-Generator. Sora 2 mit verbesserter Physik-Simulation und Audio.",
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "Videogenerierung",
-        kurzbeschreibung: "OpenAIs Video-KI. Bis 1 Minute, physikalisch kohärent, Social-Network.",
-        priceDetails: "ChatGPT Pro: 200$/Mon (inkl. Sora) | API: TBA",
-        useCases: ["High-End-Produktion", "Kreative Projekte", "Experimentell"],
+        kurzbeschreibung: "OpenAIs Sora 2. Bis 20s 1080p, physikalisch kohärent, synchronisierter Dialog/Sound.",
+        priceDetails: "ChatGPT Plus: 20$/Mon (1000 Cr., 720p, 5s) | ChatGPT Pro: 200$/Mon (10000 Cr., 1080p, 20s)",
+        useCases: ["High-End-Produktion", "Kreative Projekte", "Physik-akkurate Szenen"],
         alternatives: ["runway", "pika", "kling"],
         pros: [
-            "Von OpenAI",
-            "Physikalisch kohärente Videos",
-            "Bis 1 Minute Länge",
-            "Sora 2 mit Social-Network",
-            "Share & Remix-Features"
+            "Sora 2 mit verbesserter Physik-Simulation",
+            "Synchronisierter Dialog und Sound-Effekte",
+            "Bis 20 Sekunden bei 1080p (Pro)",
+            "In ChatGPT Plus inkludiert",
+            "Characters für konsistente Personen"
         ],
         cons: [
-            "Nur für ChatGPT Pro (200$/Mon)",
-            "Lange eingeschränkter Zugang",
-            "Teuer",
-            "Wartezeiten"
+            "⚠️ NICHT in EU/UK/Schweiz verfügbar",
+            "Plus nur 720p, 5s Videos",
+            "Pro teuer (200$/Mon)",
+            "Credits verfallen monatlich"
         ],
-        zusatzinfo: "Sora wurde im Februar 2024 angekündigt und sorgte für Aufsehen mit physikalisch kohärenten Videos bis zu einer Minute. Die Verfügbarkeit war lange auf ausgewählte Tester beschränkt. Sora 2 wurde auf den OpenAI Dev Days 2025 vorgestellt und kommt mit einem Social-Network-Feature zum Teilen und Remixen von Videos. Sora ist für ChatGPT Pro-Abonnenten (200$/Monat) verfügbar.",
-        quelle: "heise.de",
-        quelleUrl: "https://openai.com/sora"
+        zusatzinfo: "Sora 2 wurde September 2025 veröffentlicht mit dramatisch verbesserter Physik-Simulation - Basketball prallt realistisch ab statt zu teleportieren. ChatGPT Plus: 1000 Credits/Mon (ca. 50 Videos 480p), max 720p, 5s. ChatGPT Pro: 10000 Credits, 1080p, 20s, kein Wasserzeichen, unlimited Relaxed Mode. WICHTIG: Nicht verfügbar in EU, UK, Schweiz, EWR aufgrund regulatorischer Einschränkungen.",
+        quelle: "OpenAI (September 2025)",
+        quelleUrl: "https://openai.com/index/sora-2/"
     },
     {
         id: "synthesia",
@@ -2601,7 +2680,7 @@ const tools = [
         location: "🇬🇧 London, Vereinigtes Königreich",
         kategorie: "Text-to-Speech",
         kurzbeschreibung: "Marktführer TTS. 70+ Sprachen, 300+ Stimmen, Voice Cloning.",
-        priceDetails: "Free: 10K Zeichen/Mon | Starter: 5$/Mon | Creator: 22$/Mon | Pro: 99$/Mon | Scale: 330$/Mon",
+        priceDetails: "Free: 10K Credits/Mon | Starter: 5$/Mon (30K) | Creator: 22$/Mon (100K) | Pro: 99$/Mon (500K) | Scale: 330$/Mon",
         useCases: ["Hörbücher", "Voiceover", "Podcasts", "Gaming", "Accessibility"],
         alternatives: ["playht", "murf", "speechify"],
         pros: [
@@ -2737,29 +2816,29 @@ const tools = [
         aiActRisk: "limited",
         tags: [],
         url: "https://suno.ai",
-        description: "KI-Musik-Generator. Erstellt komplette Songs mit Gesang aus Text.",
+        description: "KI-Musik-Generator. Suno V5 erstellt Studio-Qualität Songs mit Gesang aus Text.",
         location: "🇺🇸 Cambridge, Massachusetts, USA",
         kategorie: "Musikgenerierung",
-        kurzbeschreibung: "Revolution Musikgenerierung. Komplette Songs mit Gesang, Instrumenten aus Text.",
-        priceDetails: "Free: ~50 Songs/Tag | Pro: 8$/Mon | Premier: 24$/Mon",
+        kurzbeschreibung: "Revolution Musikgenerierung. Suno V5 mit Studio-Qualität, bis 12 Stems, Suno Studio DAW.",
+        priceDetails: "Free: 50 Credits/Tag (v4.5) | Pro: 8$/Mon (2500 Cr., v5) | Premier: 24$/Mon (10000 Cr., Suno Studio)",
         useCases: ["Musik-Creator", "Content", "Gaming", "Hobbyisten"],
         alternatives: ["udio", "mubert", "aiva"],
         pros: [
-            "Komplette Songs mit Gesang",
-            "Version 5: 12 separate Spuren",
-            "Verbesserte Stimmqualität mit Atempausen",
-            "Warner Music Lizenzvertrag",
-            "~50 Songs/Tag kostenlos"
+            "Suno V5: Studio-Qualität (Sept 2025)",
+            "Bis 12 separate Stems exportierbar",
+            "Suno Studio: AI-native DAW (Premier)",
+            "Song Editor zum Bearbeiten",
+            "Warner Music Lizenzvertrag"
         ],
         cons: [
+            "V5 nur für zahlende Nutzer",
             "GEMA-Klage Januar 2025",
             "Copyright-Bedenken bei Training",
-            "Qualität variiert",
-            "Nicht für kommerzielle Nutzung (Free)"
+            "Free nur v4.5"
         ],
-        zusatzinfo: "Suno hat die KI-Musikgenerierung revolutioniert und erstellt aus einfachen Textbeschreibungen komplette Songs mit Gesang und Instrumenten. Version 5 bietet verbesserte Stimmqualität mit Atempausen und bis zu 12 separate Spuren. Die GEMA hat im Januar 2025 Klage gegen Suno erhoben wegen Training auf urheberrechtlich geschützter Musik. Warner Music hat jedoch kürzlich einen Lizenzvertrag mit Suno geschlossen.",
-        quelle: "heise.de (c't 2025)",
-        quelleUrl: "https://www.heise.de/ratgeber/Kostenlos-hochwertige-KI-Musik-erzeugen-Das-leisten-Suno-und-Udio-9687928.html"
+        zusatzinfo: "Suno V5 wurde im September 2025 veröffentlicht und bietet Studio-Qualität mit natürlichen Vocals inkl. Atempausen. V5 ist NUR für Pro/Premier verfügbar - Free-Nutzer bekommen v4.5. Features: Song Editor (Rewrite/Extend/Crop), bis 12 Stems Export, Suno Studio DAW (Premier). Die GEMA hat im Januar 2025 Klage erhoben. Warner Music hat einen Lizenzvertrag geschlossen. WavTool wurde 2025 akquiriert.",
+        quelle: "Suno (September 2025)",
+        quelleUrl: "https://suno.com"
     },
     {
         id: "udio",
@@ -3059,7 +3138,7 @@ const tools = [
         location: "🇺🇸 San Francisco, Kalifornien, USA",
         kategorie: "Research-KI",
         kurzbeschreibung: "Durchsucht 200M+ Papers. Extrahiert Daten, fasst Studien zusammen, beantwortet Forschungsfragen.",
-        priceDetails: "Basic: Kostenlos | Plus: 10$/Mon | Pro: 42$/Mon | Enterprise: Custom",
+        priceDetails: "Basic: Kostenlos | Plus: 12$/Mon | Pro: 49$/Mon | Team/Enterprise: Custom",
         useCases: ["Forscher", "Studenten", "Academics", "Literaturreview"],
         alternatives: ["consensus", "scite", "perplexity"],
         pros: [
@@ -3094,7 +3173,7 @@ const tools = [
         location: "🇺🇸 Boston, Massachusetts, USA",
         kategorie: "Research-Suchmaschine",
         kurzbeschreibung: "Evidence-based Antworten aus 200M+ Papers. Zeigt wissenschaftlichen Konsens.",
-        priceDetails: "Free: 20 Credits/Mon | Premium: 9$/Mon unlimited | Teams: Custom",
+        priceDetails: "Free: Limitiert | Pro: 10$/Mon (unlimited Pro Searches) | Deep: 25$/Mon (200 Deep Searches) | Teams/Enterprise: Custom",
         useCases: ["Forscher", "Studenten", "Evidence-based Medicine", "Policy-Maker"],
         alternatives: ["elicit", "scite", "perplexity"],
         pros: [
@@ -3551,7 +3630,7 @@ const tools = [
         location: "🇺🇸 USA",
         kategorie: "AI-Präsentationen",
         kurzbeschreibung: "Erstellt komplette Präsentationen per Prompt. Interaktive Decks, Docs, Webpages.",
-        priceDetails: "Free: 400 AI Credits | Plus: 8$/Mon unlimited | Pro: 16$/Mon",
+        priceDetails: "Free: 400 AI Credits | Plus: 10$/Mon (unlimited AI) | Pro: 20$/Mon (Premium-Features)",
         useCases: ["Präsentationen", "Docs", "Webpages", "Portfolio"],
         alternatives: ["beautiful.ai", "canva", "tome"],
         pros: [
@@ -4457,7 +4536,7 @@ function renderToolsGrid(toolsList) {
                 </div>
                 
                 <a href="${tool.url}" target="_blank" class="tool-link-btn">
-                    🔗 Zum Tool →
+                    Zum Tool →
                 </a>
             </div>
         `;
